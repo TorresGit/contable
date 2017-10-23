@@ -1,0 +1,60 @@
+{% extends 'layout.html.twig' %}
+
+{% block navegacion %}
+        <ul class="breadcrumb">
+            <li><i class="icon-home"></i><a href=""> Inicio</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li class="active">CONTABLE</li> 
+            <li class="moveDown pull-right">
+                
+                <span class="time"></span>
+                <span class="date"></span>
+            </li>    
+        </ul>
+{% endblock navegacion %}
+
+
+
+{% block contenido %}
+<div class="container-fluid">
+  
+  <div class="row-fluid">
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title"> 
+            <h5>Modificar Tipos de Documentos</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form action="{{ path('tiposdocumentos_edit',{'id':descripcion.id}) }}" method="post" {{ form_enctype(edit_form) }} class="form-horizontal">
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.Tipovou)}}</label>
+                <div class="controls">
+                  {{form_widget(edit_form.Tipovou)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.nombre)}}</label>
+                <div class="controls">                  
+                  {{form_widget(edit_form.nombre)}}
+                </div>
+              </div>
+              
+              <div class="form-actions">
+                <a  href="{{path('tiposdocumentos_index') }}"  <button class="btn btn-warning" type="button"> Regresar al Listado</button></a>  
+                <button type="submit" class="btn btn-success">Grabar</button>
+                {{ form_widget(edit_form) }}
+              </div>
+            
+           
+        
+            </form>
+             {{ form_start(delete_form) }}
+                <input type="submit"  class="btn btn-success" value="Eliminar del Listado">
+            {{ form_end(delete_form) }}
+           
+            </div>
+        </div>              
+{% endblock contenido%}
+
+
+
+

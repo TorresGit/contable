@@ -1,0 +1,164 @@
+{% extends "layout.html.twig" %}
+{% block navegacion %}
+        <ul class="breadcrumb">
+            <li><i class="icon-home"></i><a href=""> Inicio</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li class="active">CONTABLE</li> 
+            <li class="moveDown pull-right">
+                
+                <span class="time"></span>
+                <span class="date"></span>
+            </li>    
+        </ul>
+{% endblock navegacion %}
+
+
+
+{% block contenido %}
+    
+<div id="content">
+
+<div class="container-fluid"> 
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title"> 
+            <h5>Ingreso de Rut</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form action={{ path("ingresorut_new") }} method="post" class="form-horizontal">
+              <div class="control-group"    >
+                <label class="control-label">{{form_label(form.rut)}}</label>
+                <div class="controls">
+                  {{form_widget(form.rut)}} 
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.nombre)}}</label>
+                <div class="controls">
+                 {{form_widget(form.nombre)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.direccion)}}</label>
+                <div class="controls">
+                  {{form_widget(form.direccion)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.comuna)}}</label>
+                <div class="controls">
+                  {{form_widget(form.comuna)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.ciudad)}}</label>
+                <div class="controls">
+                 {{form_widget(form.ciudad)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.encargado)}}</label>
+                <div class="controls">
+                 {{form_widget(form.encargado)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.giro)}}</label>
+                <div class="controls">
+                 {{form_widget(form.giro)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.fono)}}</label>
+                <div class="controls">
+                 {{form_widget(form.fono)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.celular)}}</label>
+                <div class="controls">
+                 {{form_widget(form.celular)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+               
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.email)}}</label>
+                <div class="controls">
+                 {{form_widget(form.email)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+                
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.codpostal)}}</label>
+                <div class="controls">
+                 {{form_widget(form.codpostal)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.formapago)}}</label>
+                <div class="controls">
+                 {{form_widget(form.formapago)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              
+
+              <div class="control-group">
+                  
+              <label class="control-label">Caracteristicas</label>
+              <div class="controls">
+                <label>
+                  {{form_widget(form.empleado)}}
+                  {{form_label(form.empleado)}}</label>
+                
+                <label>
+                  {{form_widget(form.cliente)}} 
+                  {{form_label(form.cliente)}}</label>
+
+                <label>
+                  {{form_widget(form.proveedor)}}
+                   {{form_label(form.proveedor)}}</label>
+                   
+                    <label>
+                  {{form_widget(form.honorarios)}}
+                   {{form_label(form.honorarios)}}</label>
+              </div>
+            </div>
+            <div class="control-group">
+                  
+              <label class="control-label">Para Contabilizar</label>
+              <div class="controls">
+                <label>
+                  {{form_widget(form.ctare)}}
+                  {{form_label(form.ctare)}}</label>
+                
+                <label>
+                  {{form_widget(form.flujo)}} 
+                  {{form_label(form.flujo)}}</label>
+
+                <label>
+                  {{form_widget(form.item)}}
+                   {{form_label(form.item)}}</label>
+                   
+                    
+              </div>
+            </div>
+
+              <div class="form-actions">
+                <a  href="{{path('ingresorut_index') }}"  <button class="btn btn-warning" type="button"> Regresar al Listado</button></a>  
+                <button type="submit" class="btn btn-success">Insertar</button>
+              </div>
+            {{ form_widget(form) }}
+            </form>
+          </div>
+        </div>
+    
+     
+       
+         
+{% endblock contenido %}

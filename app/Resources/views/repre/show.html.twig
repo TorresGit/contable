@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Repre</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ repre.id }}</td>
+            </tr>
+            <tr>
+                <th>Rut</th>
+                <td>{{ repre.rut }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ repre.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ repre.direccion }}</td>
+            </tr>
+            <tr>
+                <th>Cell</th>
+                <td>{{ repre.cell }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reprempresa_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('reprempresa_edit', { 'id': repre.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Balc</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ balc.id }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ balc.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Debebal</th>
+                <td>{{ balc.debebal }}</td>
+            </tr>
+            <tr>
+                <th>Haberbal</th>
+                <td>{{ balc.haberbal }}</td>
+            </tr>
+            <tr>
+                <th>Saldo</th>
+                <td>{{ balc.saldo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('balc_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('balc_edit', { 'id': balc.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

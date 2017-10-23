@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Opecredito</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ opecredito.id }}</td>
+            </tr>
+            <tr>
+                <th>Codoperacion</th>
+                <td>{{ opecredito.codoperacion }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ opecredito.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{% if opecredito.fecha %}{{ opecredito.fecha|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Monto</th>
+                <td>{{ opecredito.monto }}</td>
+            </tr>
+            <tr>
+                <th>Numcuotas</th>
+                <td>{{ opecredito.numcuotas }}</td>
+            </tr>
+            <tr>
+                <th>Okvigente</th>
+                <td>{% if opecredito.okvigente %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('opecredito_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('opecredito_edit', { 'id': opecredito.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

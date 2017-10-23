@@ -1,0 +1,473 @@
+{% extends '::layout.html.twig' %}
+
+{% block breadcrumb %}
+    <ul class="breadcrumb">
+        <li><a href="#">Inicio</a></li>
+        <li class="active">Vouchers de Compra</li>
+    </ul>
+{% endblock %}
+
+{% block title %}
+    <div class="page-title">
+        <h2><span class="fa fa-arrow-circle-o-left"></span> Vouchers de Compra</h2>
+    </div>
+{% endblock %}
+
+{% block pagecontent %}
+    <div class="row">
+        <div class="col-md-12">
+
+            <!-- START DATATABLE EXPORT -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"></h3>
+                    <div class="btn-group pull-right">
+
+                        <button class="btn btn-info" data-toggle="modal" data-target="#modal_adicionar_suministrador">
+                            <i class="fa fa-plus"></i>
+                            Adicionar
+                        </button>
+                    </div>
+
+                </div>
+                <div class="panel-body">
+                    <table id="customers2" class="table datatable">
+                        <thead>
+                        <tr>
+                            <th>Voucher</th>
+                            <th>Clave</th>
+                            <th>Flujo</th>
+                            <th>Item</th>
+                            <th>Debe</th>
+                            <th>Haber</th>
+
+                            <th>Nombre</th>
+                            <th>TD</th>
+                            <th>Acciones</th>
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for voucompra in voucompras %}
+                            <tr id="{{ voucompra.id }}">
+
+                                <td>{{ voucompra.codvou }}</td>
+                                <td></td>
+                                <td>{{ voucompra.fecha|date('d-m-Y') }}</td>
+                                <td>{{ voucompra.fechaven|date('d-m-Y') }}</td>
+                                <td>{{ voucompra.fecharecep|date('d-m-Y') }}</td>
+                                <td></td>
+                                <td>{{ voucompra.Ingrerut.nombre }}</td>
+                                <td>{{ voucompra.Tipovou }}</td>
+                                <td>
+
+                                    <a id="button_edit" href="{{ path('voucompra_show', { 'id': voucompra.id }) }}"
+                                       class="btn btn-danger btn-sm"><i class="fa fa-eye"></i>
+                                    </a>
+                                    <a id="button_edit" class="btn btn-success btn-sm"
+                                       data-placement="top" data-toggle="modal"
+                                       data-target="#modal_editar_suministrador_{{ voucompra.id }}"
+                                       data-whatever="{{ voucompra.id }}"><i class="fa fa-edit"></i>
+                                    </a>
+
+                                    <a id="delete_prod" title=" Eliminar el voucher {{ voucompra.codvou }} "
+                                       data-toggle="modal" data-target="#modal_eliminar_{{ voucompra.id }}"
+                                       class="btn btn-danger btn-sm" data-whatever="{{ voucompra.id }}">
+                                        <i class="fa fa-trash-o "></i>
+                                    </a>
+
+
+                                    <a id="button_edit" class="btn btn-info btn-sm duplicate"
+                                       data-whatever="{{ voucompra.id }}">
+                                        <i class="fa fa-angle-double-down"></i>
+                                    </a>
+
+                                </td>
+                            </tr>
+
+
+                            {# ---------------------------------MODAL PARA EDITAR------------------------------------ #}
+
+                            <div class="modal edit_sumi" id="modal_editar_suministrador_{{ voucompra.id }}"
+                                 tabindex="-1"
+                                 role="dialog" aria-labelledby="defModalHead"
+                                 aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"><span
+                                                        aria-hidden="true">&times;</span><span
+                                                        class="sr-only">Close</span></button>
+                                            <h4 class="modal-title" id="defModalHead">Modificar el Voucher de Compra
+                                                <strong>{{ voucompra.codvou }}</strong></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <!-- START VALIDATIONENGINE PLUGIN -->
+                                                    <div id="mostrar_editar_suministrador" class="block">
+                                                        <div id="loading_details" class="text-center">
+                                                            <h2><i class="fa fa-spinner fa-spin"></i></h2>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            {# ---------------------------------FIN DEL MODAL PARA EDITAR------------------------------------ #}
+
+
+                            {#------------------------------------------MODAL PARA EL ELIMINAR-------------------------------------------------------#}
+
+                            <div class="modal fade bs-example-modal-sm" tabindex="-1" id="modal_eliminar_{{ voucompra.id }}"
+                                 role="dialog" aria-labelledby="mySmallModalLabel">
+                                <div class="modal-dialog modal-sm" role="document">
+                                    <div class="modal-content">
+                                        <div>
+                                            <center>
+                                                <legend><i class="fa fa-warning"></i>  <h4> ¿Desea eliminar el
+                                                        voucher <strong>{{ voucompra.codvou }}?</strong></h4>
+                                                </legend>
+                                            </center>
+                                            <span style="position: relative; left: 109px; top: -8px;">
+
+                            <a class="btn btn-danger btn-sm eliminar"
+                               id="eliminar" name="{{ voucompra.id }}" value="{{ voucompra.id }}">
+                            <i class="fa fa-trash-o "> </i>
+                            </a>
+
+                            <a id="cancelar" class="btn btn-info btn-sm"
+                               data-dismiss="modal">
+                            <i class="fa fa-ban "></i>
+                            </a>
+
+                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {#------------------------------------------ FIN MODAL PARA EL ELIMINAR-------------------------------------------------------#}
+
+
+
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <!-- END DATATABLE EXPORT -->
+        </div>
+    </div>
+{% endblock %}
+
+{% block messagebox %}
+
+
+    {#------------------------------------------MODAL PARA ADICIONAR SUMINISTRADORES -------------------------------------------------------#}
+
+    <div class="modal" id="modal_adicionar_suministrador" tabindex="-1" role="dialog" aria-labelledby="defModalHead"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="defModalHead">Adicionar Voucher de Compras</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="block">
+                                <form method="POST" role="form" class="form-horizontal"
+                                      action="{{ path('voucompra_index') }}" {{ form_enctype(form) }}>
+
+                                    {{ form_errors(form) }}
+
+                                    <div class="row">
+                                        {#<div class="form-group">#}
+                                        {#<label class="col-md-3 control-label">Tipos de Voucher:</label>#}
+                                        {#<div class="col-md-6">#}
+                                        {#{{ form_widget(form.Tiposvoucher) }}#}
+                                        {#</div>#}
+                                        {#</div>#}
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Fecha:</label>
+                                                <div class="col-md-6">
+                                                    {{ form_widget(form.fecha) }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Detalle:</label>
+                                                <div class="col-md-6">
+                                                    {{ form_widget(form.detalle) }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6"></div>
+
+                                    </div>
+                                    <br>
+
+
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Ingrerut:</label>
+                                                <div class="col-md-6">
+                                                    {{ form_widget(form.Ingrerut) }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">Plan:</label>
+                                                <div class="col-md-6">
+                                                    {{ form_widget(form.Plan) }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label class="col-md-6 control-label">Tipovou:</label>
+                                                <div class="col-md-6">
+                                                    {{ form_widget(form.Tipovou) }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6"></div>
+                                    </div>
+                                    <br>
+
+
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-md-6 control-label">Fecha de Venta:</label>
+                                                <div class="col-md-6">
+                                                    {{ form_widget(form.fechaven) }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-md-6 control-label">Fecha de Recepción:</label>
+                                                <div class="col-md-6">
+                                                    {{ form_widget(form.fecharecep) }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6"></div>
+                                    </div>
+                                    <br>
+
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">NUM_Documento:</label>
+                                                <div class="col-md-6">
+                                                    {{ form_widget(form.numdocu) }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">NUM_Reden:</label>
+                                                <div class="col-md-6">
+                                                    {{ form_widget(form.numoreden) }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6"></div>
+                                    </div>
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Debe:</label>
+                                                <div class="col-md-6">
+                                                    {{ form_widget(form.debe) }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Haber:</label>
+                                                <div class="col-md-6">
+                                                    {{ form_widget(form.haber) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Saldo:</label>
+                                                <div class="col-md-6">
+                                                    {{ form_widget(form.saldo) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6"></div>
+                                    </div>
+                                    <br>
+                                    <br>
+
+                                    {{ form_rest(form) }}
+
+                                    <div class="btn-group pull-right">
+                                        <button class="btn btn-primary" type="submit">Adicionar</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {#------------------------------------------ FIN MODAL PARA ADICIONAR SUMINISTRADORES-------------------------------------------------------#}
+
+
+
+
+
+
+{% endblock %}
+
+{% block pageplugins %}
+    <script type='text/javascript' src='{{ asset('template/js/plugins/icheck/icheck.min.js') }}'></script>
+    <script type="text/javascript"
+            src="{{ asset('template/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js') }}"></script>
+
+    <script type="text/javascript"
+            src="{{ asset('template/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template/js/plugins/tableexport/tableExport.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template/js/plugins/tableexport/jquery.base64.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template/js/plugins/tableexport/html2canvas.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template/js/plugins/tableexport/jspdf/libs/sprintf.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template/js/plugins/tableexport/jspdf/jspdf.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template/js/plugins/tableexport/jspdf/libs/base64.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('template/js/plugins/bootstrap/bootstrap-datepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template/js/plugins/bootstrap/bootstrap-file-input.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template/js/plugins/bootstrap/bootstrap-select.js') }}"></script>
+
+    <script type='text/javascript'
+            src='{{ asset('template/js/plugins/validationengine/languages/jquery.validationEngine-es.js') }}'></script>
+    <script type='text/javascript'
+            src='{{ asset('template/js/plugins/validationengine/jquery.validationEngine.js') }}'></script>
+
+    <script type='text/javascript'
+            src='{{ asset('template/js/plugins/jquery-validation/jquery.validate.js') }}'></script>
+
+    <script type='text/javascript'
+            src='{{ asset('template/js/plugins/maskedinput/jquery.maskedinput.min.js') }}'></script>
+
+    <script type="text/javascript" src="{{ asset('template/js/plugins/tagsinput/jquery.tagsinput.min.js') }}"></script>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+
+        $('.duplicate').on('click', function () {
+            var id = $(this).data('whatever'); // Extrae info desde el atributo data-whateve
+            var tr = $('tr#' + id).html();
+            $.ajax({
+                url: href = "http:" + "duplicate/" + id,
+                type: 'POST',                                             // indicando que la peticion será por POST
+                async: true,                                             // indiciando que la peticion será síncrona
+                data: null,       // datos del formulario serializados
+                success: function (response) {                                // funcion encargada de gestionar el resultado devuelto
+                    $('tr#' + id).before('<tr id="' + response + '">' + tr + '</tr>');
+                },
+                error: function (request, msg, error) {                     // funcion encargada de procesar el error del servidor
+                    alert("Ha ocurrido un error: [" + error + "]");
+                }
+            });
+        });
+
+        $('.edit_sumi').on('shown.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // El botón que provocó el modal
+            var idvalesalida = button.data('whatever'); // Extrae info desde el atributo data-whatever
+            var modal = $(this);
+            $.ajax({
+                url: href = "http:" + "edit/" + idvalesalida,
+                type: 'POST',                                             // indicando que la peticion será por POST
+                async: true,                                             // indiciando que la peticion será síncrona
+                data: null,       // datos del formulario serializados
+                success: function (html) {                                // funcion encargada de gestionar el resultado devuelto
+                    modal.find('#mostrar_editar_suministrador').html(html);
+                    modal.find('#mostrar_editar_suministrador').show();
+
+                },
+                error: function (request, msg, error) {                     // funcion encargada de procesar el error del servidor
+                    alert("Ha ocurrido un error: [" + error + "]");
+                }
+            });
+        })
+
+
+
+        $('.eliminar').click(function () {
+            var data = {
+                producto_id: $(this).val() // se obtiene el valor  que se le pone al boton eliminar
+            };
+
+            //  alert(data.producto_id);
+            var id = $(this).attr('name');// se obtiene el id del que se le pone como nombre al boton eliminar
+            // alert(id);
+            $.ajax({
+                type: 'POST',
+                url: href = "http:" + "delete/" + id,
+                data: data,
+                success: function (data) {
+                    if (data) {
+                        var id = '#' + data;// se concatena la fila con id del producto
+                        $(id).remove();// para eliminar  la fila
+                        $('.bs-example-modal-sm').fadeOut(500);
+                        noty({
+                            text: 'El voucher de compra se ha eliminado correctamente.',
+                            layout: 'topCenter', type: 'error', timeout: 3000
+                        });
+                    }
+                },
+
+                error: function (request, msg, error) {                     // funcion encargada de procesar el error del servidor
+                    alert("Ha ocurrido un error: [" + error + "]");
+                },
+            });
+        });
+
+    </script>
+{% endblock %}
+

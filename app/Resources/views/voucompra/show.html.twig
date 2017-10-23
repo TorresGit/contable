@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+    <title>CONTABLE </title>
+
+    <!-- Bootstrap -->
+    <link href="{{ asset('assets5/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{{ asset('assets5/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{{ asset('assets5/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{{ asset('assets5/vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="{{ asset('assets5/vendors/google-code-prettify/bin/prettify.min.css')}}" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="{{ asset('assets5/vendors/select2/dist/css/select2.min.css')}}" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="{{ asset('assets5/vendors/switchery/dist/switchery.min.css')}}" rel="stylesheet">
+    <!-- starrr -->
+    <link href="{{ asset('assets5/vendors/starrr/dist/starrr.css')}}" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="{{ asset('assets5/vendors/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{{ asset('assets5/build/css/custom.min.css')}}" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets3/css/estilos.css')}}" />
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      
+        
+
+        <!-- top navigation -->
+      
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            
+
+            <div class="clearfix"></div>
+            
+
+            
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              
+            </div>
+
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>Ingreso de Voucher de Compra </h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                 
+                  
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+             <div class="x_content">
+                    <br />
+                    <form class="form-horizontal form-label-left input_mask">
+
+
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                          
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Voucher</label>
+                        <div class="col-md-6 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="{{ voucompra.codvou }}">
+                        </div>
+                      </div>
+
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Número</label>
+                        <div class="col-md-6 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="{{ voucompra.id }}">
+                        </div>
+                      </div>
+
+                      <div class="col-md-9 col-sm-6 col-xs-12 form-group has-feedback">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Detalle</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" placeholder="{{ voucompra.detalle }}" class="form-control">
+                        </div>
+                      </div>
+
+                      {#<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">#}
+                        {#<label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo</label>#}
+                        {#<div class="col-md-9 col-sm-9 col-xs-12">#}
+                          {#<input type="text" class="form-control" placeholder="{{ voucompra.idtiposvoucher}}">#}
+                        {#</div>#}
+                      {#</div>#}
+
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="{{ voucompra.fecha|date("d/m/Y")}}">
+                        </div>
+                      </div>  
+
+
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                          
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Compra a</label>
+                        <div class="col-md-6 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="{{ voucompra.Ingrerut}}">
+                        </div>
+                      </div>
+
+                       <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                    <input type="text" placeholder="{{ voucompra.Ingrerut.nombre}}" class="form-control">
+                  </div>
+
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Proyecto</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="{{ voucompra.Plan}}">
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                    <input type="text" placeholder="{{ voucompra.Plan.descripcion}}" class="form-control">
+                  </div>
+
+                  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Documento</label>
+                        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                            <input type="text" placeholder="{{ voucompra.Tipovou}}" class="form-control">
+                        </div>
+                        <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+                            <input type="text" placeholder="{{ voucompra.Tipovou.id}}" class="form-control">
+                       </div>
+                        
+                        <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                            <input type="text" placeholder="{{ voucompra.fecha|date("d/m/Y")}}" class="form-control">
+                       </div>
+                      </div>
+
+                       
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                        </div>
+
+
+                        
+                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha.Ven</label>
+                        <div class="col-md-6 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="{{ voucompra.fechaven|date("d/m/Y")}}">
+                        </div>
+                      </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha.Rcep</label>
+                        <div class="col-md-6 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="{{ voucompra.fecharecep|date("d/m/Y")}}">
+                        </div>
+                      </div>
+
+                      
+                     
+                      
+                      
+
+                      <div class="ln_solid"></div>
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <div class="col-md-6 col-sm-9 col-xs-12 col-md-offset-3">
+                           <a  href="{{path('voucompra_new') }}" <button type="button" class="btn btn-primary">CREAR</button></a>
+                          
+						  
+                          
+                        </div>
+                      </div>
+
+                    </form>
+
+                                <div class="x_panel">
+
+                <div id="content">
+                  <label>Agregar Filas</label>
+                  <button id="bt_add" class="btn btn-default">Agregar</button>
+             <table border="1">
+                <tr>   
+                  <td>N°</td>
+                  <td>Cuenta</td>
+                                                            <td>Clave</td>
+                                                            <td>Flujo</td>
+                                                            <td>Item</td>
+                                                            <td>Debe</td>
+                                                            <td>Haber</td>
+                                                            <td>Rut</td>
+                                                            <td>Nombre</td>
+                                                            <td>TD</td>
+                                                            <td>Docu1</td>
+                                                            <td>TD</td>
+                                                            <td>Docu2</td>
+                                                            <td>FecVen</td>
+                                                            <td>Glosas.L</td>
+                                                            <td>ProyectoC</td>
+                                                            <td>ProyectoN</td>
+                                                            <td>Orden</td>
+                                                            <td>Fase</td>
+                                                            <td>Fech.Doc</td>
+                                                            <td>Operaciòn</td>
+                                                            <td>Moneda</td>
+                                                            <td>Debe C.M</td>
+                                                            <td>Haber C.M</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                               
+                                                                                                                              
+                                                                
+                                                                        <td>{{ voucompra.codvou }}</td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                         <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        
+
+                                                                       
+
+
+                                                            </tr>
+                                                          
+
+                                                        </table>
+                
+        </div>
+              
+              
+            </div>
+                  </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <!-- /page content -->
+
+       
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{{ asset('assets5/vendors/jquery/dist/jquery.min.js')}}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('assets5/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src="{{ asset('assets5/vendors/fastclick/lib/fastclick.js')}}"></script>
+    <!-- NProgress -->
+    <script src="{{ asset('assets5/vendors/nprogress/nprogress.js')}}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{{ asset('assets5/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js')}}"></script>
+    <!-- iCheck -->
+    <script src="{{ asset('assets5/vendors/iCheck/icheck.min.js')}}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{ asset('assets5/vendors/moment/min/moment.min.js')}}"></script>
+    <script src="{{ asset('assets5/vendors/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="{{ asset('assets5/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js')}}"></script>
+    <script src="{{ asset('assets5/vendors/jquery.hotkeys/jquery.hotkeys.js')}}"></script>
+    <script src="{{ asset('assets5/vendors/google-code-prettify/src/prettify.js')}}"></script>
+    <!-- jQuery Tags Input -->
+    <script src="{{ asset('assets5/vendors/jquery.tagsinput/src/jquery.tagsinput.js')}}"></script>
+    <!-- Switchery -->
+    <script src="{{ asset('assets5/vendors/switchery/dist/switchery.min.js')}}"></script>
+    <!-- Select2 -->
+    <script src="{{ asset('assets5/vendors/select2/dist/js/select2.full.min.js')}}"></script>
+    <!-- Parsley -->
+    <script src="{{ asset('assets5/vendors/parsleyjs/dist/parsley.min.js')}}"></script>
+    <!-- Autosize -->
+    <script src="{{ asset('assets5/vendors/autosize/dist/autosize.min.js')}}"></script>
+    <!-- jQuery autocomplete -->
+    <script src="{{ asset('assets5/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js')}}"></script>
+    <!-- starrr -->
+    <script src="{{ asset('assets5/vendors/starrr/dist/starrr.js')}}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{{ asset('assets5/build/js/custom.min.js')}}"></script>
+     <script src="{{ asset('assets3/js/vendor.jquery-2.1.1.js')}}"></script>
+     <script src="{{ asset('assets3/js/vendor/bootstrap.min.js')}}"></script>
+    
+
+    <script>
+
+      $(document).ready(function(){
+          $('_#bt_add').click(function(){
+                agregar(); 
+      });
+
+      }); 
+
+      var cont=0;   
+      function agregar(){
+          cont++; 
+          var fila='<tr class="selected" id= "fila'+cont+'"><td>'+cont+'</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>20</td><td>20</td><td>20</td><td>20</td></tr>';
+          $('#tabla').append(fila);
+
+      }
+      
+      
+
+
+
+    </script>
+
+	
+  </body>
+</html>

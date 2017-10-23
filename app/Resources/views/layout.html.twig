@@ -1,0 +1,263 @@
+{% extends '::template.html.twig' %}
+
+{% block sidebar %}
+    <ul class="x-navigation">
+        <li class="xn-logo">
+            <a href="#">CONTABLE</a>
+            <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="xn-profile">
+            <a href="#" class="profile-mini">
+                <img src="{{ asset('template/assets/images/users/avatar.jpg') }}" alt="John Doe"/>
+            </a>
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="{{ asset('template/assets/images/users/avatar.jpg') }}" alt="John Doe"/>
+                </div>
+                {#<div class="profile-data">#}
+                    {#<div class="profile-data-name"><strong>Registrado como:</strong> {{ app.user.usuario }}</div>#}
+                    {#<div class="profile-data-title">#}
+                        {#{% if app.user.rol == 'ROLE_ADMIN' %}#}
+                            {#Administrador#}
+                        {#{% else %}#}
+                        {#{% endif %}#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="profile-controls">#}
+                {#<a href="#" class="profile-control-left"><span class="fa fa-info"></span></a>#}
+                {#<a href="#" class="profile-control-right"><span class="fa fa-envelope"></span></a>#}
+                {#</div>#}
+            </div>
+        </li>
+
+            <li class="xn-title">Panel de Navegación</li>
+            <li class="active">
+                <a href="#"><span class="fa fa-desktop"></span> <span
+                            class="xn-text">Inicio</span></a>
+            </li>
+            <li class="xn-openable">
+                <a href="#"><span class="fa fa-cog"></span> <span class="xn-text">Mantención</span></a>
+                <ul>
+                    <li><a href="#"><span class="fa fa-users"></span> Ingreso Plan de Cuentas</a></li>
+                    <li><a href="#"><span class="fa fa-building"></span> Ingreso Tabla de Empresa</a></li>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso Rut</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Mantención de Folios</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso y Manteción Tabla de Documentos</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso y Manteción Tipos de Voucher</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso Lista de Informes</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso Bal.Clasificado</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso Tabla de Items</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso Tabla de Rubros Presup</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso Tabla de Bancos</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso Tabla de Operaciones Cartolas</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso de Glosas para Cartolas</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso Opereaciones de Crédito</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso de Centros de Costo</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso Tabla de Flujos</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso Tabla de Monedas</a>
+                    <li><a href="#"><span class="fa fa-map-marker"></span> Ingreso Tabla de Tipos para Libros</a>
+                    </li>
+
+
+
+
+                </ul>
+
+            </li>
+
+
+
+        <li class="xn-openable">
+            <a href="#"><span class="fa fa-cog"></span> <span class="xn-text">Voucher</span></a>
+            <ul>
+
+                        <li><a href="#"><span class="fa fa-user-md"></span> Ingreso/Consulta de Vouchers</a></li>
+                        <li><a href="#"><span class="fa fa-user-md"></span> Voucher Compra CC</a></li>
+                        <li><a href="#"><span class="fa fa-user-md"></span> Voucher Honorarios</a></li>
+                        <li><a href="#"><span class="fa fa-user-md"></span> Imprime Vouchers</a></li>
+                        <li><a href="#"><span class="fa fa-user-md"></span> Consulta Gneral de Voucher por Mes</a></li>
+                        <li><a href="#"><span class="fa fa-user-md"></span> Consulta Anual de Voucher</a></li>
+                        <li><a href="#"><span class="fa fa-user-md"></span> Voucher de Apertura</a></li>
+
+
+            </ul>
+
+        </li>
+
+
+        <li class="xn-openable">
+            <a href="#"><span class="fa fa-cog"></span> <span class="xn-text">Ventas</span></a>
+            <ul>
+
+                <li><a href="#"><span class="fa fa-user-md"></span> Facturación</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Voucher de Venta</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Voucher de Ventas Constructoras</a></li>
+
+            </ul>
+
+        </li>
+
+
+        <li class="xn-openable">
+            <a href="#"><span class="fa fa-cog"></span> <span class="xn-text">Importa</span></a>
+            <ul>
+
+                <li><a href="#"><span class="fa fa-user-md"></span> Importa Facturas dede Exel</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Crea Voucher desde Importación</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Crea Voucher de Compra Importando</a></li>
+
+            </ul>
+
+        </li>
+
+
+        <li class="xn-openable">
+            <a href="#"><span class="fa fa-cog"></span> <span class="xn-text">Tesorería</span></a>
+            <ul>
+
+                <li><a href="#"><span class="fa fa-user-md"></span> Consulta y Mantención de Egresos</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Imprime Cheques de Talonario</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Panel Imprime Cheques</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Ingreso de Cartolas</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Panel Conciliación Bancaria</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Emite Conciliación Bancaria</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Emite Conciliaciòn Bancaria (Nombre)</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Limpia Conciliación </a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Genera Egresos</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Genera Egresos desde Orden de Servicios</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Emite Operación de Pagos</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span> Emite Egresos por Proyectos</a></li>
+
+            </ul>
+
+        </li>
+
+
+        <li class="xn-openable">
+            <a href="#"><span class="fa fa-cog"></span> <span class="xn-text">Procesos</span></a>
+            <ul>
+
+                <li><a href="#"><span class="fa fa-user-md"></span>Traspaso a Conciliaciòn Bancaria</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Traspaso de Cartolas a C. Bancaria</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Calce Automàtico G. de Anàlisis</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Calce Automàtico Bancos</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Verifica Cuadratura</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Liampia para Re_Actualizar Voucher</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Actualizaciòn de Voucher</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Actualizaciòn Dsitibuciòn de Gastos</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Voucher de Apertura</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Exportar Planillas</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Exportar Plan de Cuentas</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Exportar Movimiento Proyectos</a></li
+                <li><a href="#"><span class="fa fa-user-md"></span>Proceso de Cierre del Perìodo </a></li>>
+                <li><a href="#"><span class="fa fa-user-md"></span>Correcciòn Monetaria</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Carga Mes</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Cambio de Perìodo</a></li>
+
+            </ul>
+
+        </li>
+
+
+
+        <li class="xn-openable">
+            <a href="#"><span class="fa fa-cog"></span> <span class="xn-text">Gestión</span></a>
+            <ul>
+
+                <li><a href="#"><span class="fa fa-user-md"></span>Gestión Análisis Cuentas</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Estadísticas de Ventas</a></li>
+
+
+            </ul>
+
+        </li>
+
+
+
+        <li class="xn-openable">
+            <a href="#"><span class="fa fa-cog"></span> <span class="xn-text">Informes</span></a>
+            <ul>
+
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Libro Mayor(laser)</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Libro Diario</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Libro de Honorarios</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Libro General de Honorarios</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Libro General de Ventas</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Libro General de Ventas Constructoras</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Libro General de Compras</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Emite Informe Balance General</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Balance General Voucher de Apertura</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Emite Informe Balance Tributario</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Emite  Balance Clasificado</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Emite Informe Balance General</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Emite Hojas Foliadas para Timbrar</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Anàlisis Contable</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Anàlisis Contable C.M</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Anàlisis por Vencimiento</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Anàlisis Libros de Cheques</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Anàlisis Libros de Cheques por # de Cheques</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Anàlisis por Proyecto</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Anàlisis por Opereciòn</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Anàlisis por Opereciòn C.M</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Detalles Movimiento de Cuentas</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Emite Conciliaciòn Bancaria</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Flujo Efectivo</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe de Item Presupuestarios </a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Anàlisis por Item</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Gastos x CC x Mes</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe de Detalles de Cuentas por Centro de Costo</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informes Impresora Matriz por Punto</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Conciliaciòn Bancaria</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Informe Anàlisis por Ràpido</a></li>
+
+
+            </ul>
+
+        </li>
+
+
+        <li class="xn-openable">
+            <a href="#"><span class="fa fa-cog"></span> <span class="xn-text">Consultas</span></a>
+            <ul>
+                <li><a href="#"><span class="fa fa-user-md"></span>Consulta Lìneas Voucher</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Consulta Detalles Movimientos de Cuentas</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Consulta Anàlisis Cuenta-RUT</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Consulta Anàlisis  RUT-Cuenta</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Consulta Movimiento de Cuentas Por Fecha</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Consulta Movimiento por Item</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Consulta Movimiento por Centro de Costo</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Consulta Movimiento por Flujo</a></li>
+            </ul>
+
+        </li>
+
+        <li class="xn-openable">
+            <a href="#"><span class="fa fa-cog"></span> <span class="xn-text">Gráficos</span></a>
+            <ul>
+                <li><a href="#"><span class="fa fa-user-md"></span>Gráficos</a></li>
+            </ul>
+
+        </li>
+
+        <li class="xn-openable">
+            <a href="#"><span class="fa fa-cog"></span> <span class="xn-text">Certificados</span></a>
+            <ul>
+                <li><a href="#"><span class="fa fa-user-md"></span>Ingreso de Factores</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Traspaso para Emitir Cert.Honorarios(2006) </a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Exporta para Hiper Renta</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Consulta Tabla Generada</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Genera para Informar Compra-Ventas Sii</a></li>
+                <li><a href="#"><span class="fa fa-user-md"></span>Emite Certificados de Honorarios</a></li>
+ 
+            </ul>
+
+        </li>
+
+
+
+    </ul>
+
+
+
+
+{% endblock %}

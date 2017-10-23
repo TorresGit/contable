@@ -1,0 +1,69 @@
+{% extends "layout.html.twig" %}
+{% block navegacion %}
+        <ul class="breadcrumb">
+            <li><i class="icon-home"></i><a href=""> Inicio</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li class="active">CONTABLE</li> 
+            <li class="moveDown pull-right">
+                
+                <span class="time"></span>
+                <span class="date"></span>
+            </li>    
+        </ul>
+{% endblock navegacion %}
+
+
+
+{% block contenido %}
+    
+    <div id="content">
+
+<div class="container-fluid"> 
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title"> 
+            <h5>Ingreso Tabla de Flujo</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form action={{ path("flujoefec_new") }} method="post" class="form-horizontal">
+              
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.grupo)}}</label>
+                <div class="controls">
+                 {{form_widget(form.grupo)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.descrip)}}</label>
+                <div class="controls">
+                  {{form_widget(form.descrip)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.debe)}}</label>
+                <div class="controls">
+                  {{form_widget(form.debe)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.haber)}}</label>
+                <div class="controls">
+                 {{form_widget(form.haber)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              
+
+              <div class="form-actions">
+                <a  href="{{path('flujoefec_index') }}"  <button class="btn btn-warning" type="button"> Regresar al Listado</button></a>  
+                <button type="submit" class="btn btn-success">Insertar</button>
+              </div>
+            {{ form_widget(form) }}
+            </form>
+          </div>
+        </div>
+     
+       
+         
+{% endblock contenido %}
+

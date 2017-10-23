@@ -1,0 +1,667 @@
+<?php
+
+namespace Amd\PiperBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * Ingrerut
+ *
+ * @ORM\Table(name="ingrerut")
+ * @ORM\Entity(repositoryClass="Amd\PiperBundle\Repository\IngrerutRepository")
+ */
+class Ingrerut
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rut", type="string", length=255)
+     */
+    private $rut;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="direccion", type="string", length=255)
+     */
+    private $direccion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comuna", type="string", length=255)
+     */
+    private $comuna;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ciudad", type="string", length=255)
+     */
+    private $ciudad;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="encargado", type="string", length=255)
+     */
+    private $encargado;
+
+    
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="giro", type="string", length=255)
+     */
+    private $giro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fono", type="string", length=255)
+     */
+    private $fono;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="celular", type="string", length=255)
+     */
+    private $celular;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codpostal", type="string", length=255)
+     */
+    private $codpostal;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="formapago", type="string", length=255)
+     */
+    private $formapago;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="empleado", type="boolean")
+     */
+    private $empleado;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cliente", type="boolean")
+     */
+    private $cliente;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="proveedor", type="boolean")
+     */
+    private $proveedor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="honorarios", type="boolean")
+     */
+    private $honorarios;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ctare", type="boolean")
+     */
+    private $ctare;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="flujo", type="boolean")
+     */
+    private $flujo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="item", type="boolean")
+     */
+    private $item;
+
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Amd\PiperBundle\Entity\Voucompra", mappedBy="Ingrerut", cascade={"persist"})
+     */
+    private $voucompra;
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set rut
+     *
+     * @param string $rut
+     * @return Ingrerut
+     */
+    public function setRut($rut)
+    {
+        $this->rut = $rut;
+
+        return $this;
+    }
+
+    /**
+     * Get rut
+     *
+     * @return string 
+     */
+    public function getRut()
+    {
+        return $this->rut;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return Ingrerut
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set direccion
+     *
+     * @param string $direccion
+     * @return Ingrerut
+     */
+    public function setDireccion($direccion)
+    {
+        $this->direccion = $direccion;
+
+        return $this;
+    }
+
+    /**
+     * Get direccion
+     *
+     * @return string 
+     */
+    public function getDireccion()
+    {
+        return $this->direccion;
+    }
+
+    /**
+     * Set comuna
+     *
+     * @param string $comuna
+     * @return Ingrerut
+     */
+    public function setComuna($comuna)
+    {
+        $this->comuna = $comuna;
+
+        return $this;
+    }
+
+    /**
+     * Get comuna
+     *
+     * @return string 
+     */
+    public function getComuna()
+    {
+        return $this->comuna;
+    }
+
+    /**
+     * Set ciudad
+     *
+     * @param string $ciudad
+     * @return Ingrerut
+     */
+    public function setCiudad($ciudad)
+    {
+        $this->ciudad = $ciudad;
+
+        return $this;
+    }
+
+    /**
+     * Get ciudad
+     *
+     * @return string 
+     */
+    public function getCiudad()
+    {
+        return $this->ciudad;
+    }
+
+    /**
+     * Set encargado
+     *
+     * @param string $encargado
+     * @return Ingrerut
+     */
+    public function setEncargado($encargado)
+    {
+        $this->encargado = $encargado;
+
+        return $this;
+    }
+
+    /**
+     * Get encargado
+     *
+     * @return string 
+     */
+    public function getEncargado()
+    {
+        return $this->encargado;
+    }
+
+    
+
+    /**
+     * Set giro
+     *
+     * @param string $giro
+     * @return Ingrerut
+     */
+    public function setGiro($giro)
+    {
+        $this->giro = $giro;
+
+        return $this;
+    }
+
+    /**
+     * Get giro
+     *
+     * @return string 
+     */
+    public function getGiro()
+    {
+        return $this->giro;
+    }
+
+    /**
+     * Set fono
+     *
+     * @param string $fono
+     * @return Ingrerut
+     */
+    public function setFono($fono)
+    {
+        $this->fono = $fono;
+
+        return $this;
+    }
+
+    /**
+     * Get fono
+     *
+     * @return string 
+     */
+    public function getFono()
+    {
+        return $this->fono;
+    }
+
+    /**
+     * Set celular
+     *
+     * @param string $celular
+     * @return Ingrerut
+     */
+    public function setCelular($celular)
+    {
+        $this->celular = $celular;
+
+        return $this;
+    }
+
+    /**
+     * Get celular
+     *
+     * @return string 
+     */
+    public function getCelular()
+    {
+        return $this->celular;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Ingrerut
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set codpostal
+     *
+     * @param string $codpostal
+     * @return Ingrerut
+     */
+    public function setCodpostal($codpostal)
+    {
+        $this->codpostal = $codpostal;
+
+        return $this;
+    }
+
+    /**
+     * Get codpostal
+     *
+     * @return string 
+     */
+    public function getCodpostal()
+    {
+        return $this->codpostal;
+    }
+
+    /**
+     * Set formapago
+     *
+     * @param string $formapago
+     * @return Ingrerut
+     */
+    public function setFormapago($formapago)
+    {
+        $this->formapago = $formapago;
+
+        return $this;
+    }
+
+    /**
+     * Get formapago
+     *
+     * @return string 
+     */
+    public function getFormapago()
+    {
+        return $this->formapago;
+    }
+
+    /**
+     * Set empleado
+     *
+     * @param string $empleado
+     * @return Ingrerut
+     */
+    public function setEmpleado($empleado)
+    {
+        $this->empleado = $empleado;
+
+        return $this;
+    }
+
+    /**
+     * Get empleado
+     *
+     * @return string 
+     */
+    public function getEmpleado()
+    {
+        return $this->empleado;
+    }
+
+
+    /**
+     * Set cliente
+     *
+     * @param string $cliente
+     * @return Ingrerut
+     */
+    public function setCliente($cliente)
+    {
+        $this->cliente = $cliente;
+
+        return $this;
+    }
+
+    /**
+     * Get cliente
+     *
+     * @return string 
+     */
+    public function getCliente()
+    {
+        return $this->cliente;
+    }
+
+    /**
+     * Set proveedor
+     *
+     * @param string $proveedor
+     * @return Ingrerut
+     */
+    public function setProveedor($proveedor)
+    {
+        $this->proveedor = $proveedor;
+
+        return $this;
+    }
+
+    /**
+     * Get proveedor
+     *
+     * @return string 
+     */
+    public function getProveedor()
+    {
+        return $this->proveedor;
+    }
+
+    /**
+     * Set honorarios
+     *
+     * @param string $honorarios
+     * @return Ingrerut
+     */
+    public function setHonorarios($honorarios)
+    {
+        $this->honorarios = $honorarios;
+
+        return $this;
+    }
+
+    /**
+     * Get honorarios
+     *
+     * @return string 
+     */
+    public function getHonorarios()
+    {
+        return $this->honorarios;
+    }
+
+    /**
+     * Set ctare
+     *
+     * @param string $ctare
+     * @return Ingrerut
+     */
+    public function setCtare($ctare)
+    {
+        $this->ctare = $ctare;
+
+        return $this;
+    }
+
+    /**
+     * Get ctare
+     *
+     * @return string 
+     */
+    public function getCtare()
+    {
+        return $this->ctare;
+    }
+
+    /**
+     * Set flujo
+     *
+     * @param string $flujo
+     * @return Ingrerut
+     */
+    public function setFlujo($flujo)
+    {
+        $this->flujo = $flujo;
+
+        return $this;
+    }
+
+    /**
+     * Get flujo
+     *
+     * @return string 
+     */
+    public function getFlujo()
+    {
+        return $this->flujo;
+    }
+
+     /**
+     * Set item
+     *
+     * @param string $item
+     * @return Ingrerut
+     */
+    public function setItem($item)
+    {
+        $this->item = $item;
+
+        return $this;
+    }
+
+    /**
+     * Get item
+     *
+     * @return string 
+     */
+    public function getItem()
+    {
+        return $this->item;
+    }
+
+     public function __toString() {
+
+        return $this->getrut()." ".$this->getnombre();
+    }
+
+     
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->voucompra = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add voucompra
+     *
+     * @param \Amd\PiperBundle\Entity\Voucompra $voucompra
+     * @return Ingrerut
+     */
+    public function addVoucompra(\Amd\PiperBundle\Entity\Voucompra $voucompra)
+    {
+        $this->voucompra[] = $voucompra;
+
+        return $this;
+    }
+
+    /**
+     * Remove voucompra
+     *
+     * @param \Amd\PiperBundle\Entity\Voucompra $voucompra
+     */
+    public function removeVoucompra(\Amd\PiperBundle\Entity\Voucompra $voucompra)
+    {
+        $this->voucompra->removeElement($voucompra);
+    }
+
+    /**
+     * Get voucompra
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVoucompra()
+    {
+        return $this->voucompra;
+    }
+}

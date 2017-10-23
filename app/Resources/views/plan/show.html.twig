@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <title>CONTABLE</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ asset('assets3/css/bootstrap-responsive.min.css')}}">
+
+        <link rel="stylesheet" href="{{ asset('assets3/css/styles.css')}}">
+        <link rel="shortcut icon" href="{{ asset('assets/custom/ico/favicon.png') }}">
+        
+
+
+
+    </head>
+
+    <body class="tables">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- ==================== TOP MENU ==================== -->
+        <div id="nav-bar" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <a class="brand" style=" position: relative;left: 23px; " href=""><strong class="brandBold">SISTEMA</strong>CONTABLE </a>
+                <div class="nav-collapse collapse pull-right">
+                     {% block user_bar %} 
+                     <div id="nav-bar" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <a class="brand" style=" position: relative;left: 23px; " href=""><strong class="brandBold">SISTEMA</strong>CONTABLE </a>
+                <div class="nav-collapse collapse pull-right">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+<ul class="nav pull-right">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="icon-user"></i> Usuario: {{ app.user.username }}<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            
+            <li><a href="{{path('fos_user_profile_show')}}">Ver Perfil</a></li>
+            <li class="divider"></li>
+            <li><a href="{{path('fos_user_change_password')}}">Cambiar Contarseña</a></li>
+            <li class="divider"></li>
+            <li><a href="{{path('fos_user_profile_edit')}}">Editar Perfil</a></li>
+            <li class="divider"></li>
+            <li><a href="{{ path('fos_user_security_logout') }}">Salir</a></li>
+                     
+            
+        </ul>
+    </li>    
+</ul>
+{% else %}
+<ul class="nav pull-right">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="icon-user"></i> Entrar <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="{{ path('fos_user_security_login') }}">Entrar</a></li>
+            
+            
+        </ul>
+    </li>    
+</ul>
+{% endif %}
+ {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="flash-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}                     
+                </div>
+                </div>
+            </div>
+                        
+                    {% endblock %}
+                   
+                    </div>
+                </div>
+            </div>
+            <!-- ==================== END OF TOP MENU ==================== -->
+
+            <!-- ==================== SIDEBAR ==================== -->
+            <div class="hiddenContent">
+                <!-- ==================== SIDEBAR COLLAPSED ==================== -->
+                
+                <!-- ==================== END OF SIDEBAR COLLAPSED ==================== -->
+                <!-- ==================== SIDEBAR TASKS ==================== -->
+               
+                <!-- ==================== END OF SIDEBAR TASKS ==================== -->
+
+                <!-- ==================== SIDEBAR NOTIFICATIONS ==================== -->
+               
+                <!-- ==================== END OF SIDEBAR NOTIFICATIONS ==================== -->
+
+                <!-- ==================== SIDEBAR MESSAGES ==================== -->
+                
+                <!-- ==================== END OF SIDEBAR MESSAGES ==================== -->
+
+                <!-- ==================== SIDEBAR SETTINGS ==================== -->
+               
+                <!-- ==================== END OF SIDEBAR SETTINGS ==================== -->
+
+                <!-- ==================== SIDEBAR PROFILE ==================== -->
+               
+                <!-- ==================== END OF SIDEBAR PROFILE ==================== -->
+
+            </div>
+            <!-- ==================== END OF SIDEBAR ==================== -->
+
+
+            <!-- ==================== MAIN MENU ==================== -->
+            <div class="mainmenu">
+                <div class="container-fluid">
+                    <ul class="nav">
+                        <li class="collapseMenu"><a href="#"><i class="icon-double-angle-left"></i>hide menu<i class="icon-double-angle-right deCollapse"></i></a></li>
+                        
+                        <li class="left-side" id="dashboard"><a href=""><i class="icon-dashboard"> Inicio</i> </a></li>
+                    
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown">
+
+
+
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="" id="samplePages"><i class="icon-globe"></i> Mantenciòn <span class="label label-pressed"></span></a>
+                            <ul class="dropdown-menu">
+                            
+                                    <li><a tabindex="-1" href="">Ingreso Plan de Cuentas</a></li>                           
+                                    <li><a tabindex="-1" href="">Ingreso Tabla de Empresa</a></li>
+                                    <li><a tabindex="-1" href="">Ingreso Rut</a></li>                            
+                            
+                                    <li><a tabindex="-1" href="">Mantenciòn de Folios</a></li>                             
+                            
+                            
+                                    <li><a tabindex="-1" href="">Ingreso y Manteciòn Tabla de Documentos  </a></li>
+                                    <li><a tabindex="-1" href="">Ingreso y Manteciòn Tipos de Voucher</a></li>                            
+                             
+                                    <li><a tabindex="-1" href="">Ingreso Lista de Informes</a></li>
+                                    <li><a tabindex="-1" href="">Ingreso Bal.Clasificado</a></li>
+                                    <li><a tabindex="-1" href="">Ingreso Tabla de Items</a></li>
+                                    <li><a tabindex="-1" href="">Ingreso Tabla de Rubros Presup</a></li>
+                                    <li><a tabindex="-1" href="">Ingreso Tabla de Bancos</a></li>
+                                    <li><a tabindex="-1" href="">Ingreso Tabla de Operaciones Cartolas</a></li>
+                                    <li><a tabindex="-1" href="">Ingreso de Glosas para Cartolas</a></li>
+                                    <li><a tabindex="-1" href="">Ingreso Opereaciones de Crèdito</a></li>
+                                    <li><a tabindex="-1" href="">Ingreso de Centros de Costo</a></li>
+                                    <li><a tabindex="-1" href="">Ingreso Tabla de Flujos</a></li>
+                                    <li><a tabindex="-1" href="">Ingreso Tabla de Monedas</a></li>
+                                    <li><a tabindex="-1" href="">Ingreso Tabla de Tipos para Libros</a></li>
+                             
+
+                               
+                               
+
+                            </ul>
+                        
+                        </li>
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="" id="samplePages"><i class="icon-globe"></i> Voucher <span class="label label-pressed"></span></a>
+                            <ul class="dropdown-menu">
+                            
+                                    <li><a tabindex="-1" href="">Ingreso/Consulta de Vouchers</a></li>                           
+                                    <li><a tabindex="-1" href="">Voucher Compra CC</a></li>
+                                    <li><a tabindex="-1" href="">Voucher Honorarios</a></li>
+                             
+                            
+                                    <li><a tabindex="-1" href="">Imprime Vouchers</a></li>
+                                    
+                            
+                            
+                                    <li><a tabindex="-1" href="">Consulta Gneral de Voucher por Mes</a></li>
+                                    <li><a tabindex="-1" href="">Consulta Anual de Voucher</a></li>
+                            
+                             
+                                    <li><a tabindex="-1" href="">Voucher de Apertura</a></li>
+                                    
+                             
+
+                                </ul>
+                            </li>
+
+
+
+
+
+                            <li class="divider-vertical"></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="samplePages"><i class="icon-globe"></i> Ventas <span class="label label-pressed"></span></a>
+                                <ul class="dropdown-menu">
+                             
+                                        <li><a tabindex="-1" href="">Facturaciòn</a></li>    
+                                        <li><a tabindex="-1" href="">Voucher de Venta</a></li>
+                                                         
+                                        <li><a tabindex="-1" href="">Voucher de Ventas Constructoras</a></li>                           
+                                       
+                            
+                                        
+                            
+                                    </ul>
+                                </li>
+                     
+                                <li class="divider-vertical"></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="samplePages"><i class="icon-globe"></i> Importa <span class="label label-pressed"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="">Importa Facturas dede Exel</a></li>
+                                        <li><a tabindex="-1" href="">Crea Voucher desde Importaciòn</a></li>
+                                        <li><a tabindex="-1" href="">Crea Voucher de Compra Importando</a></li>
+
+                                    </ul>
+                                </li>
+                     
+                                <li class="divider-vertical"></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="samplePages"><i class="icon-globe"></i> Tesorerìa <span class="label label-pressed"></span></a>
+                                    <ul class="dropdown-menu">
+                             
+                                            <li><a tabindex="-1" href="">Consulta y Mantenciòn de Egresos</a></li>
+                             
+
+
+                             
+                                            <li><a tabindex="-1" href="">Imprime Cheques de Talonario</a></li>
+                                            <li><a tabindex="-1" href="">Panel Imprime Cheques</a></li>
+                                            <li><a tabindex="-1" href="">Ingreso de Cartolas</a></li>
+
+                             
+                                            
+                                            
+                                            <li><a tabindex="-1" href="">Panel Conciliaciòn Bancaria</a></li>
+                                            <li><a tabindex="-1" href="">Emite Conciliaciòn Bancaria</a></li>
+                                            <li><a tabindex="-1" href="">Emite Conciliaciòn Bancaria (Nombre)</a></li>
+                                            <li><a tabindex="-1" href="">Limpia Conciliaciòn </a></li>
+                                            <li><a tabindex="-1" href="">Genera Egresos </a></li>
+                                            <li><a tabindex="-1" href="">Genera Egresos desde Orden de Servicios </a></li>
+                                            <li><a tabindex="-1" href="">Emite Operaciòn de Pagos </a></li>
+                                            <li><a tabindex="-1" href="">Emite Egresos por Proyectos </a></li>
+ 
+                                        </ul>
+                                    </li>                  
+
+                                    
+
+                                <li class="divider-vertical"></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="samplePages"><i class="icon-globe"></i> Procesos <span class="label label-pressed"></span></a>
+                                    <ul class="dropdown-menu">
+                             
+                                            <li><a tabindex="-1" href="">Traspaso a Conciliaciòn Bancaria</a></li>
+                             
+
+
+                             
+                                            <li><a tabindex="-1" href="">Traspaso de Cartolas a C. Bancaria</a></li>
+                                            <li><a tabindex="-1" href="">Calce Automàtico G. de Anàlisis</a></li>
+                                            <li><a tabindex="-1" href="">Calce Automàtico Bancos</a></li>
+
+                             
+                                            
+                                            
+                                            <li><a tabindex="-1" href="">Verifica Cuadratura</a></li>
+                                            <li><a tabindex="-1" href="">Liampia para Re_Actualizar Voucher</a></li>
+                                            <li><a tabindex="-1" href="">Actualizaciòn de Voucher</a></li>
+                                            <li><a tabindex="-1" href="">Actualizaciòn Dsitibuciòn de Gastos</a></li>
+                                            <li><a tabindex="-1" href="">Voucher de Apertura</a></li>
+                                            <li><a tabindex="-1" href="">Exportar Planillas</a></li>
+                                            <li><a tabindex="-1" href="">Exportar Plan de Cuentas</a></li>
+                                            <li><a tabindex="-1" href="">Exportar Movimiento Proyectos</a></li
+                                            <li><a tabindex="-1" href="">Proceso de Cierre del Perìodo </a></li>>
+                                            <li><a tabindex="-1" href="">Correcciòn Monetaria</a></li>
+                                            <li><a tabindex="-1" href="">Carga Mes</a></li>
+                                            <li><a tabindex="-1" href="">Cambio de Perìodo</a></li>
+ 
+                                        </ul>
+                                    </li>                  
+
+                                    
+                                    
+                                    <li class="divider-vertical"></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="samplePages"><i class="icon-globe"></i> Gestiòn <span class="label label-pressed"></span></a>
+                                    <ul class="dropdown-menu">
+                             
+                                            <li><a tabindex="-1" href="">Gestiòn Anàlisis Cuentas</a></li>
+                             
+
+
+                             
+                                            <li><a tabindex="-1" href="">Estadisticas de Ventas</a></li>
+                                            
+
+                             
+                                            
+                                            
+                                            
+ 
+                                        </ul>
+                                    </li>
+                                    
+                                    <li class="divider-vertical"></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="samplePages"><i class="icon-globe"></i> Informes <span class="label label-pressed"></span></a>
+                                    <ul class="dropdown-menu">
+                             
+                                            <li><a tabindex="-1" href="">Informe Libro Mayor(laser)</a></li>
+                             
+
+
+                             
+                                            <li><a tabindex="-1" href="">Informe Libro Diario</a></li>
+                                            <li><a tabindex="-1" href="">Informe Libro de Honorarios</a></li>
+                                            <li><a tabindex="-1" href="">Libro General de Honorarios</a></li>                      
+                                            
+                                            
+                                            <li><a tabindex="-1" href="">Libro General de Ventas</a></li>
+                                            <li><a tabindex="-1" href="">Libro General de Ventas Constructoras</a></li>
+                                            <li><a tabindex="-1" href="">Libro General de Compras</a></li>
+                                            <li><a tabindex="-1" href="">Emite Informe Balance General</a></li>
+                                            <li><a tabindex="-1" href="">Informe Balance General Voucher de Apertura</a></li>
+                                            <li><a tabindex="-1" href="">Emite Informe Balance Tributario</a></li>
+                                            <li><a tabindex="-1" href="">Emite  Balance Clasificado</a></li>
+                                            <li><a tabindex="-1" href="">Emite Informe Balance General</a></li>
+                                            <li><a tabindex="-1" href="">Emite Hojas Foliadas para Timbrar</a></li>
+                                            <li><a tabindex="-1" href="">Informe Anàlisis Contable</a></li>
+                                            <li><a tabindex="-1" href="">Informe Anàlisis Contable C.M</a></li>
+                                            <li><a tabindex="-1" href="">Informe Anàlisis por Vencimiento</a></li>
+                                            <li><a tabindex="-1" href="">Informe Anàlisis Libros de Cheques</a></li>
+                                            <li><a tabindex="-1" href="">Informe Anàlisis Libros de Cheques por # de Cheques</a></li>
+                                            <li><a tabindex="-1" href="">Informe Anàlisis por Proyecto</a></li>
+                                            <li><a tabindex="-1" href="">Informe Anàlisis por Opereciòn</a></li>
+                                            <li><a tabindex="-1" href="">Informe Anàlisis por Opereciòn C.M</a></li>
+                                            <li><a tabindex="-1" href="">Informe Detalles Movimiento de Cuentas</a></li>
+                                            <li><a tabindex="-1" href="">Emite Conciliaciòn Bancaria</a></li>
+                                            <li><a tabindex="-1" href="">Informe Flujo Efectivo</a></li>
+                                            <li><a tabindex="-1" href="">Informe de Item Presupuestarios </a></li>
+                                            <li><a tabindex="-1" href="">Informe Anàlisis por Item</a></li>
+                                            <li><a tabindex="-1" href="">Informe Gastos x CC x Mes</a></li>
+                                            <li><a tabindex="-1" href="">Informe de Detalles de Cuentas por Centro de Costo</a></li>
+                                            <li><a tabindex="-1" href="">Informes Impresora Matriz por Punto</a></li>
+                                            <li><a tabindex="-1" href="">Informe Conciliaciòn Bancaria</a></li>
+                                            <li><a tabindex="-1" href="">Informe Anàlisis por Ràpido</a></li>
+ 
+                                        </ul>
+                                    </li>                  
+
+
+                                    
+                                    <li class="divider-vertical"></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="samplePages"><i class="icon-globe"></i> Consultas <span class="label label-pressed"></span></a>
+                                    <ul class="dropdown-menu">
+                             
+                                            <li><a tabindex="-1" href="">Consulta Lìneas Voucher</a></li>
+                             
+
+
+                             
+                                            <li><a tabindex="-1" href="">Consulta Detalles Movimientos de Cuentas</a></li>
+                                            <li><a tabindex="-1" href="">Consulta Anàlisis Cuenta-RUT</a></li>
+                                            <li><a tabindex="-1" href="">Consulta Anàlisis  RUT-Cuenta</a></li>
+                                            <li><a tabindex="-1" href="">Consulta Movimiento de Cuentas Por Fecha</a></li>
+
+                             
+                                            
+                                            
+                                            <li><a tabindex="-1" href="">Consulta Movimiento por Item</a></li>
+                                            <li><a tabindex="-1" href="">Consulta Movimiento por Centro de Costo</a></li>
+                                            <li><a tabindex="-1" href="">Consulta Movimiento por Flujo</a></li>
+ 
+                                        </ul>
+                                    </li>                  
+
+                                    
+                                    <li class="divider-vertical"></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="samplePages"><i class="icon-globe"></i> Gràficos <span class="label label-pressed"></span></a>
+                                    <ul class="dropdown-menu">
+                             
+                                            <li><a tabindex="-1" href="">Gràficos</a></li>
+                             
+
+
+                             
+                                                                      
+                                            
+                                            
+                                            
+ 
+                                        </ul>
+                                    </li>                  
+
+                                    
+
+                                    
+
+                                    <li class="divider-vertical"></li>
+                                    
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="samplePages"><i class="icon-globe"></i> Certificados <span class="label label-pressed"></span></a>
+                                    <ul class="dropdown-menu">
+                             
+                                            <li><a tabindex="-1" href="">Ingreso de Factores</a></li>
+                             
+
+
+                             
+                                            <li><a tabindex="-1" href="">Traspaso para Emitir Cert.Honorarios(2006) </a></li>
+                                            <li><a tabindex="-1" href="">Exporta para Hiper Renta</a></li>
+                                            <li><a tabindex="-1" href="">Consulta Tabla Generada</a></li>
+                                            <li><a tabindex="-1" href="">Genera para Informar Compra-Ventas Sii</a></li>
+
+                             
+                                            
+                                            
+                                            <li><a tabindex="-1" href="">Emite Certificados de Honorarios</a></li>
+ 
+                                        </ul>
+                                    </li>                  
+
+                                    <li class="divider-vertical"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- ==================== END OF MAIN MENU ==================== -->
+
+                        <!-- ==================== DROPDOWN MENU FOR MOREOPTIONS ICON (hidden state) ==================== -->
+                       
+                        <!-- ==================== END OF DROPDOWN MENU ==================== -->
+
+                        <!-- ==================== PAGE CONTENT ==================== -->
+                        <div class="content">
+
+                            <!-- ==================== TITLE LINE FOR HEADLINE ==================== -->
+                            
+                            <!-- ==================== END OF TITLE LINE ==================== -->
+
+                            <!-- ==================== BREADCRUMBS / DATETIME ==================== -->
+                            <ul class="breadcrumb">
+                                <li><i class="icon-home"></i><a href=""> Inicio</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                                <li class="active">Plan de Cuentas</li>
+                                <li class="moveDown pull-right">
+                                    <span class="time"></span>
+                                    <span class="date"></span>
+                                </li>  
+                            </ul>
+                            <!-- ==================== END OF BREADCRUMBS / DATETIME ==================== -->
+
+                            <!-- ==================== WIDGETS CONTAINER ==================== -->
+                            <div class="container-fluid">
+
+                                <!-- ==================== TABLE ROW ==================== -->
+                                <div class="row-fluid">
+                                    <div class="span12">
+
+
+                                        <!-- ==================== TABLE HEADLINE ==================== -->
+                                        <div class="containerHeadline tableHeadline">
+                                            <i class="icon-group"></i><h2>Plan de Cuentas</h2>
+                                            <!-- ==================== TABLE CONTROLS ==================== -->
+                                            <form>
+                                                <div class="input-append">
+                                                    <input class="inp-mini span8" type="text" placeholder="buscar en Empresa..." id="memberSearch">
+                                                    <span class="add-on add-on-first add-on-mini"><i class="icon-search"></i></span>
+                                                    <span class="add-on add-on-middle add-on-mini tableSettings"><i class="icon-cog"></i></span>
+                                                    <span class="add-on add-on-middle add-on-mini minimizeTable"><i class="icon-caret-down"></i></span>
+                                                    
+                                                </div>
+                                            </form>
+                                            <!-- ==================== END OF TABLE CONTROLS ==================== -->
+                                        </div>
+                                        <!-- ==================== END OF TABLE HEADLINE ==================== -->
+
+                                        <!-- ==================== TABLE FLOATING BOX ==================== -->
+                                        <div class="floatingBox table">
+                                            <div class="container-fluid">
+                                                <!-- ==================== TABLESORTER TABLE ==================== -->
+                                                <!-- ==================== TABLESORTER TABLE ==================== -->
+                                                <table class="tablesorter centerFirstLast" id="membersTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class=""></th>                                                            
+                                                            <th data-placeholder="buscar...">Análisis Rut</th>
+                                                            <th data-placeholder="buscar...">Operaciòn Crediticia</th>
+                                                            <th data-placeholder="buscar...">Conciliaciòn</th>
+                                                            <th data-placeholder="buscar...">Flujo</th>
+                                                            <th data-placeholder="buscar...">C.Costo</th>
+                                                            <th data-placeholder="buscar...">Item</th>
+                                                            <th data-placeholder="buscar...">Gráfica</th>
+                                                            <th data-placeholder="buscar...">Análisis Proyecto</th>
+                                                            <th data-placeholder="buscar...">C.Dif.Cam</th>
+                                                            <th data-placeholder="buscar...">Cta.Dif.Cam</th>
+                                                            <th data-placeholder="buscar...">C.Cats.Resul</th>
+                                                            <th data-placeholder="buscar...">Cta.Resultado</th>
+                                                            <th data-placeholder="buscar...">Exento</th>
+                                                            <th data-placeholder="buscar...">Afecto</th>
+                                                            <th data-placeholder="buscar...">Iva</th>
+                                                            <th data-placeholder="buscar...">Iva3ro </th>
+                                                            <th data-placeholder="buscar...">Imp.Esp</th>
+                                                            
+                                                            
+                                                            
+                                                                                                                        
+
+                                                            
+                                                            
+                                                                                                                       
+                                                            <th class="actions">Accion</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                       
+                                                            <tr>
+                                                                <td><span class="label cyan" title="Informaciòn"><i class="icon-info-sign info" ></i></span></td>                                                                
+                                                                
+                                                                        <td>{% if plan.arut %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{% if plan.oprcredit %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{% if plan.concilia %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{% if plan.flujo %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{% if plan.ccosto %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{% if plan.item %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{% if plan.grafica %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{% if plan.aproyecto %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{% if plan.cmdifcamdio %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{{ plan.contradifcam }}</td>
+                                                                        <td>{% if plan.cmctasresul %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{{ plan.ctaresul }}</td>
+                                                                        <td>{% if plan.exento %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{% if plan.afecto %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{% if plan.iva %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{% if plan.ivat %}Yes{% else %}No{% endif %}</td>
+                                                                        <td>{% if plan.impesp %}Yes{% else %}No{% endif %}</td>
+                                                                        
+                                                                        
+                                                                       
+
+                                                                        <td><a class="label red" data-original-title title="ver mas datos" href="{{ path('plancuenta_index', { 'id': plan.id }) }}"><i class="icon-eye-open edit"></i></a>
+                                                                        <a class="label green" data-original-title title="editar" href="{{ path('plancuenta_edit', { 'id': plan.id }) }}"><i class="icon-pencil edit"></i></a></td>
+                                                                        
+
+
+
+                                                            </tr>
+                                       
+
+
+                                                        </tbody>
+                                                    </table>
+
+                                                    <!-- ==================== END OF TABLESORTER TABLE ==================== -->
+
+                                                    <!-- ==================== TABLE PAGER ==================== -->
+                                                    <div id="pager" class="pager">
+                                                        <form>
+                                                            <span class="label white first"><i class="icon-double-angle-left"></i> primero</span>
+                                                            <span class="label white prev"><i class="icon-angle-left"></i> anterior</span>
+                                                            <span id="pageNumContainers"></span>
+                                                            <span class="pagedisplay"></span><!-- this can be any element, including an input -->
+                                                            <span class="label white next">siguiente <i class="icon-angle-right"></i></span>
+                                                            <span class="label white last">último <i class="icon-double-angle-right"></i></span>
+                                                            <div class="perPageSelect">
+                                                                <select class="pagesize inp-mini">
+                                                                    <option selected="selected" value="10">10</option>
+                                                                    <option value="20">20</option>
+                                                                    <option value="30">30</option>
+                                                                    <option value="50">50</option>
+                                                                </select> archivos por páginas
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+
+                                                    <ul>
+                                                        <li>
+                                                            <a href="{{ path('plancuenta_new') }}">
+                                                                Adicionar
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- ==================== END TABLE PAGER ==================== -->
+
+                                                </div>
+                                            </div>
+                                            <!-- ==================== END OF TABLE FLOATING BOX ==================== -->
+
+
+                                        </div>
+                                    </div>
+                                    <!-- ==================== END OF ANOTHER DYNAMIC TABLE FLOATING BOX ==================== --> 
+                                </div>
+                            </div>
+                            <!-- ==================== END OF TABLE ROW ==================== -->
+
+                        </div>
+                        <!-- ==================== END OF WIDGETS CONTAINER ==================== -->
+                    </div>
+                    <!-- ==================== END OF PAGE CONTENT ==================== -->
+
+
+
+
+
+
+
+                    <script src="{{ asset('assets3/http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')}}"></script>
+                    <script>window.jQuery || document.write('<script src="{{ asset('assets3/js/vendor/jquery-1.9.1.min.js')}}"><\/script>')</script>
+                    <script src="{{ asset('assets3/js/vendor/bootstrap-slider.js')}}"></script>                   <!-- bootstrap slider plugin -->
+                    <script src="{{ asset('assets3/js/vendor/jquery.sparkline.min.js')}}"></script>               <!-- small charts plugin -->
+                    <script src="{{ asset('assets3/js/vendor/jquery.tablesorter.min.js')}}"></script>             <!-- tablesorter plugin -->
+                    <script src="{{ asset('assets3/js/vendor/jquery.tablesorter.widgets.min.js')}}"></script>     <!-- tablesorter plugin / widgets extension -->
+                    <script src="{{ asset('assets3/js/vendor/jquery.tablesorter.pager.min.js')}}"></script>       <!-- tablesorter plugin / pager extension -->
+                    <script src="{{ asset('assets3/js/vendor/bootstrap-datepicker.js')}}"></script>               <!-- datepicker plugin -->
+                    <script src="{{ asset('assets3/js/vendor/bootstrap-multiselect.js')}}"></script>              <!-- multiselect plugin -->
+
+                    <script src="{{ asset('assets3/js/vendor/bootstrap.min.js')}}"></script>
+                    <script src="{{ asset('assets3/js/vendor/bootstrap-editable.min.js')}}"></script>             <!-- editable fields plugin -->
+                    <script src="{{ asset('assets3/js/thekamarel.min.js')}}"></script>    
+
+
+
+                    <script>
+                   // add parser through the tablesorter addParser method
+                   $.tablesorter.addParser({
+                       id: 'checkbox',
+                       is: function(s) {
+                           return false;
+                       },
+                       format: function(s, table, cell, cellIndex) {
+                           var $t = $(table), $c = $(cell), c,
+
+                           // resort the table after the checkbox status has changed
+                           resort = false;
+
+                           if (!$t.hasClass('hasCheckbox')) {
+                               $t
+                               .addClass('hasCheckbox')
+                               // make checkbox in header set all others
+                               .find('thead th:eq(' + cellIndex + ') input[type=checkbox]')
+                               .bind('change', function(){
+                                   c = this.checked;
+                                   $t.find('tbody tr:visible td:nth-child(' + (cellIndex + 1) + ') input').each(function(){
+                                     this.checked = c;
+                                     $(this).trigger('change');
+                                   });
+                               })
+                               .bind('mouseup', function(){
+                                   return false;
+                               });
+                               $t.find('tbody tr').each(function(){
+                                   $(this).find('td:eq(' + cellIndex + ')').find('input[type=checkbox]').bind('change', function(){
+                                       $t.trigger('updateCell', [$(this).closest('td')[0], resort]);
+                                   });
+                               });
+                           }
+                           // return 1 for true, 2 for false, so true sorts before false
+                           c = ($c.find('input[type=checkbox]')[0].checked) ? 1 : 2;
+                           $c.closest('tr')[ c === 1 ? 'addClass' : 'removeClass' ]('checked');
+                           return c;
+                       },
+                       type: 'numeric'
+                   });
+
+                   $(function() {
+                       $('#tablesorterDemo').tablesorter({
+                           sortList: [[1,0]],
+                           widgets: ['zebra', 'stickyHeaders'],
+                           headers: {
+                               0: {
+                                   sorter: 'checkbox'
+                               },
+                           }
+                       });
+                   });
+                        </script>
+
+
+                    </body>
+                </html>
+

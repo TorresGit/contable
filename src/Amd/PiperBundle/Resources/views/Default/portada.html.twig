@@ -1,0 +1,52 @@
+{% extends "layout.html.twig" %}
+{% block navegacion %}
+        <ul class="breadcrumb">
+            <li><i class="icon-home"></i><a href=""> Inicio</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li class="active">CONTABLE</li> 
+            <li class="moveDown pull-right">
+                
+                <span class="time"></span>
+                <span class="date"></span>
+            </li>    
+        </ul>
+        {% endblock navegacion %}
+{% block contenido %}
+    <div class="container-fluid">
+        
+                        
+       
+        <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="{{ asset('assets4/img/bootstrap-mdo-sfmoma-01.jpg')}}" alt style="position: relative;left: 0px;">
+                        <div class="carousel-caption">
+                            <h4></h4>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('assets4/img/bootstrap-mdo-sfmoma-02.jpg')}}" alt style="position: relative;left: 0px;">
+                        <div class="carousel-caption">
+                            <h4></h4>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{{ asset('assets4/img/bootstrap-mdo-sfmoma-03.jpg')}}" alt  style="position: relative;left: 0px;">
+                        <div class="carousel-caption">
+                            <h4></h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+            </div>
+        </div>
+    </div>
+{% endblock contenido %}

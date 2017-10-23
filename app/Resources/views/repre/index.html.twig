@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Repres list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Rut</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Cell</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for repre in repres %}
+            <tr>
+                <td><a href="{{ path('reprempresa_show', { 'id': repre.id }) }}">{{ repre.id }}</a></td>
+                <td>{{ repre.rut }}</td>
+                <td>{{ repre.nombre }}</td>
+                <td>{{ repre.direccion }}</td>
+                <td>{{ repre.cell }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('reprempresa_show', { 'id': repre.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('reprempresa_edit', { 'id': repre.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reprempresa_new') }}">Create a new repre</a>
+        </li>
+    </ul>
+{% endblock %}

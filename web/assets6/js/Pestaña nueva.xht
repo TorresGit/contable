@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<!DOCTYPE html [
+  <!ENTITY % newTabDTD SYSTEM "chrome://browser/locale/newTab.dtd">
+  %newTabDTD;
+  <!ENTITY % browserDTD SYSTEM "chrome://browser/locale/browser.dtd">
+  %browserDTD;
+  <!ENTITY % globalDTD SYSTEM "chrome://global/locale/global.dtd">
+  %globalDTD;
+]>
+<html xmlns="http://www.w3.org/1999/xhtml" hasBrowserHandlers="true">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Pestaña nueva</title>
+
+  <link rel="stylesheet" type="text/css" media="all" href="Pesta%C3%B1a%20nueva_files/global.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="Pesta%C3%B1a%20nueva_files/contentSearchUI.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="Pesta%C3%B1a%20nueva_files/newTab_002.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="Pesta%C3%B1a%20nueva_files/newTab.css" />
+</head>
+
+<body dir="ltr">
+  <div id="newtab-customize-overlay"></div>
+
+  <div class="newtab-customize-panel-container">
+    <div id="newtab-customize-panel" orient="vertical">
+        <div id="newtab-customize-panel-anchor"></div>
+        <div id="newtab-customize-panel-inner-wrapper">
+          <div id="newtab-customize-title" class="newtab-customize-panel-item">
+            <label>NUEVOS CONTROLES DE PESTAÑAS</label>
+          </div>
+
+          <div class="newtab-customize-complex-option">
+            <div id="newtab-customize-classic" class="newtab-customize-panel-superitem newtab-customize-panel-item selectable" selected="true">
+                <label>Mostrar sus sitios preferidos</label>
+            </div>
+            <div id="newtab-customize-enhanced" class="newtab-customize-panel-subitem">
+                <label class="checkbox"></label>
+                <label>Incluir sitios sugeridos</label>
+            </div>
+          </div>
+          <div id="newtab-customize-blank" class="newtab-customize-panel-item selectable">
+            <label>Mostrar página en blanco</label>
+          </div>
+          <div id="newtab-customize-learn" class="newtab-customize-panel-item">
+            <label>Saber más sobre Nueva pestaña</label>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="newtab-vertical-margin">
+    <div id="newtab-margin-top"></div>
+
+    <div id="newtab-margin-undo-container">
+      <div id="newtab-undo-container" undo-disabled="true">
+        <label id="newtab-undo-label">Miniatura eliminada.</label>
+        <button id="newtab-undo-button" tabindex="-1" class="newtab-undo-button">Deshacer.</button>
+        <button id="newtab-undo-restore-button" tabindex="-1" class="newtab-undo-button">Restaurar todas.</button>
+        <button id="newtab-undo-close-button" tabindex="-1" title="Ocultar"></button>
+      </div>
+    </div>
+
+    <div id="newtab-search-container">
+      <div id="newtab-search-form">
+        <div id="newtab-search-icon"></div>
+        <input name="q" id="newtab-search-text" aria-label="Criterios de búsqueda" maxlength="256" autocomplete="off" aria-autocomplete="true" aria-controls="searchSuggestionTable" aria-expanded="false" placeholder="Buscar" type="text" />
+        <input id="newtab-search-submit" title="Enviar búsqueda" value="▶" type="button" />
+      <table id="searchSuggestionTable" class="contentSearchSuggestionTable" role="presentation" hidden=""><tr class="contentSearchHeaderRow"><td class="contentSearchHeader" id="contentSearchDefaultEngineHeader"><img src="blob:null/f97fa7fb-125b-4cee-8eb2-2f413e295161" />Búsqueda en Google</td></tr><tr class="contentSearchSuggestionsContainer"><td class="contentSearchSuggestionsContainer"><table class="contentSearchSuggestionsList" role="listbox"></table></td></tr><table class="contentSearchOneOffsTable contentSearchSuggestionsContainer" role="group"><tr class="contentSearchHeaderRow"><td class="contentSearchHeader" id="contentSearchSearchWithHeader">Buscar con:</td></tr></table><button class="contentSearchSettingsButton contentSearchHeaderRow contentSearchHeader" id="contentSearchSettingsButton" aria-selected="false">Cambiar configuración de búsqueda</button></table></div>
+    </div>
+
+    <div id="newtab-horizontal-margin">
+      <div class="newtab-side-margin"></div>
+      <div id="newtab-grid" style="width: 1240px; max-width: 1551px; height: 802px; max-height: 800px;">
+        <h1 id="topsites-heading">Sus sitios frecuentes</h1>
+      <div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="The world's leading software development platform · GitHub
+https://github.com/" href="https://github.com/">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Fgithub.com%2F&amp;revision=6781&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">github.com</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="CSS3 - Webkit - Vertical Scrollbars | CSSDeck
+http://cssdeck.com/labs/css3-webkit-vertical-scrollbars" href="http://cssdeck.com/labs/css3-webkit-vertical-scrollbars">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fcssdeck.com%2Flabs%2Fcss3-webkit-vertical-scrollbars&amp;revision=4401&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">cssdeck.com</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="Gentelella Alela! |
+https://colorlib.com/polygon/gentelella/" href="https://colorlib.com/polygon/gentelella/">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Fcolorlib.com%2Fpolygon%2Fgentelella%2F&amp;revision=3310&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">colorlib.com</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="CONTABLE
+http://localhost/Desarrollo/contable/web/app_dev.php/voucompra/" href="http://localhost/Desarrollo/contable/web/app_dev.php/voucompra/">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Flocalhost%2FDesarrollo%2Fcontable%2Fweb%2Fapp_dev.php%2Fvoucompra%2F&amp;revision=4087&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">localhost</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="SB Admin - Start Bootstrap Template
+http://blackrockdigital.github.io/startbootstrap-sb-admin/#" href="http://blackrockdigital.github.io/startbootstrap-sb-admin/#">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fblackrockdigital.github.io%2Fstartbootstrap-sb-admin%2F%23&amp;revision=5691&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">blackrockdigital.github.io</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="tutorial html y css | personalizar scrollbar en css3 - YouTube
+https://www.youtube.com/watch?v=4LJ_2mTz-wo" href="https://www.youtube.com/watch?v=4LJ_2mTz-wo">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4LJ_2mTz-wo&amp;revision=2856&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">youtube.com</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="Blur Admin
+http://akveo.com/blur-admin-mint/#/tables/basic" href="http://akveo.com/blur-admin-mint/#/tables/basic">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fakveo.com%2Fblur-admin-mint%2F%23%2Ftables%2Fbasic&amp;revision=1122&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">akveo.com</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="Blur Admin on ThemeCards
+http://bootstrap.theme.cards/r/akveo-blur-admin" href="http://bootstrap.theme.cards/r/akveo-blur-admin">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fbootstrap.theme.cards%2Fr%2Fakveo-blur-admin&amp;revision=3159&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">bootstrap.theme.cards</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="Tutorial CSS : crear una tabla con scroll
+https://informaticapc.com/tutorial-css/tabla-con-scroll.php" href="https://informaticapc.com/tutorial-css/tabla-con-scroll.php">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Finformaticapc.com%2Ftutorial-css%2Ftabla-con-scroll.php&amp;revision=2993&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">informaticapc.com</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="Gentelella Alela! |
+file:///C:/Users/Proyecto/Downloads/gentelella-master/documentation/index_cn.html" href="file:///C:/Users/Proyecto/Downloads/gentelella-master/documentation/index_cn.html">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=file%3A%2F%2F%2FC%3A%2FUsers%2FProyecto%2FDownloads%2Fgentelella-master%2Fdocumentation%2Findex_cn.html&amp;revision=1794&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title"></span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="BlurAdmin angular admin dashboard template
+https://akveo.github.io/blur-admin/" href="https://akveo.github.io/blur-admin/">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Fakveo.github.io%2Fblur-admin%2F&amp;revision=6414&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">akveo.github.io</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="como insertar barras de scroll para una tabla - Foros del Web
+http://www.forosdelweb.com/f4/como-insertar-barras-scroll-para-tabla-208905/" href="http://www.forosdelweb.com/f4/como-insertar-barras-scroll-para-tabla-208905/">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fwww.forosdelweb.com%2Ff4%2Fcomo-insertar-barras-scroll-para-tabla-208905%2F&amp;revision=1165&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">forosdelweb.com</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="jquery.dataTables.min.css
+https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Fcdn.datatables.net%2F1.10.15%2Fcss%2Fjquery.dataTables.min.css&amp;revision=7055&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">cdn.datatables.net</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="DataTables example - Scroll - horizontal and vertical
+https://datatables.net/examples/basic_init/scroll_xy.html" href="https://datatables.net/examples/basic_init/scroll_xy.html">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Fdatatables.net%2Fexamples%2Fbasic_init%2Fscroll_xy.html&amp;revision=4441&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">datatables.net</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">PATROCINADO</span><a class="newtab-link" title="https://code.jquery.com/jquery-1.12.4.js" href="https://code.jquery.com/jquery-1.12.4.js">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Fcode.jquery.com%2Fjquery-1.12.4.js&amp;revision=5598&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">code.jquery.com</span></a><input title="Fijar este sitio en su posición actual" class="newtab-control newtab-control-pin" type="button" /><input title="Eliminar este sitio" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div></div>
+      <div class="newtab-side-margin"></div>
+    </div>
+
+    <div id="newtab-margin-bottom"></div>
+  </div>
+  <input id="newtab-customize-button" dir="ltr" value="⚙" title="Personalizar su página Nueva pestaña" type="button" />
+</body>
+<script type="text/javascript" src="Pesta%C3%B1a%20nueva_files/contentSearchUI.js"></script>
+<script type="text/javascript" src="Pesta%C3%B1a%20nueva_files/newTab.js"></script>
+</html>

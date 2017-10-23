@@ -1,0 +1,152 @@
+{% extends "layout.html.twig" %}
+{% block navegacion %}
+        <ul class="breadcrumb">
+            <li><i class="icon-home"></i><a href=""> Inicio</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li class="active">CONTABLE</li> 
+            <li class="moveDown pull-right">
+                
+                <span class="time"></span>
+                <span class="date"></span>
+            </li>    
+        </ul>
+{% endblock navegacion %}
+
+
+
+{% block contenido %}
+    
+    <div id="content">
+
+<div class="container-fluid"> 
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title"> 
+            <h5>Folio Sistema</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form action={{ path("folisist_new") }} method="post" class="form-horizontal">
+              <div class="control-group"    >
+                <label class="control-label">{{form_label(form.Empresa)}}</label>
+                <div class="controls">
+                  {{form_widget(form.Empresa)}} 
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.fecha)}}</label>
+                <div class="controls">
+                 {{form_widget(form.fecha)}}
+                </div>
+              </div>
+              
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.codcompra)}}</label>
+                <div class="controls">
+                  {{form_widget(form.codcompra)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.entidad)}}</label>
+                <div class="controls">
+                 {{form_widget(form.entidad)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.opetesore)}}</label>
+                <div class="controls">
+                 {{form_widget(form.opetesore)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+               <div class="control-group">
+                <label class="control-label">{{form_label(form.ivacredito)}}</label>
+                <div class="controls">
+                 {{form_widget(form.ivacredito)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.proveedores)}}</label>
+                <div class="controls">
+                 {{form_widget(form.proveedores)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.retimphon)}}</label>
+                <div class="controls">
+                 {{form_widget(form.retimphon)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.honorarios)}}</label>
+                <div class="controls">
+                 {{form_widget(form.honorarios)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+             
+                
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.ivadebito)}}</label>
+                <div class="controls">
+                 {{form_widget(form.ivadebito)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.cliente)}}</label>
+                <div class="controls">
+                 {{form_widget(form.cliente)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.ivaretenido)}}</label>
+                <div class="controls">
+                 {{form_widget(form.ivaretenido)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+               <div class="control-group">
+                <label class="control-label">{{form_label(form.bancocheques)}}</label>
+                <div class="controls">
+                 {{form_widget(form.bancocheques)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.nopedido)}}</label>
+                <div class="controls">
+                 {{form_widget(form.nopedido)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.nofactura)}}</label>
+                <div class="controls">
+                 {{form_widget(form.nofactura)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+
+                            
+
+              
+              <div class="form-actions">
+                <a  href="{{path('folisist_index') }}"  <button class="btn btn-warning" type="button"> Regresar al Listado</button></a>
+                  
+                <button type="submit" class="btn btn-success">Insertar</button>
+              </div>
+            {{ form_widget(form) }}
+            </form>
+          </div>
+        </div>
+     
+       
+         
+{% endblock contenido %}
+
+

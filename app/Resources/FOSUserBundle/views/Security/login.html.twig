@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+        <title>CONTABLE</title><meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{{ asset('assets6/css/bootstrap.min.css')}}" />
+		<link rel="stylesheet" href="{{ asset('assets6/css/bootstrap-responsive.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('assets6/css/matrix-login.css')}}" />
+        <link href="{{ asset('assets6/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
+        <link rel="shortcut icon" href="{{ asset('assets6/img/favicon.png') }}">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+        
+
+    </head>
+    <body>
+        <div id="loginbox">            
+            <form id="loginform" class="form-vertical" action={{ path("fos_user_security_check") }} method="post">
+                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                <div class="control-group normal_text"> <h3><img src="{{ asset('assets6/img/login1.png') }}" alt="" /> Ingrese sus  Datos </h3></div>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="main_input_box">
+                            <span class="add-on bg_lg"><i class="icon-user"> </i></span>
+                            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="main_input_box">
+                            <span class="add-on bg_ly"><i class="icon-lock"></i></span>
+                            <input type="password" id="password" name="_password" required="required" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">                    
+                    <span class="pull-right">
+                        <span class="pull-right">
+                            <input class="btn btn-success" type="submit" id="_submit" name="_submit" value="Entrar" /></input>
+                        </span>
+                        
+                    </span>
+                </div>
+            </form>
+            
+        </div>
+        
+        <script src={{asset("assets6/js/jquery.min.js")}}></script>  
+        <script src={{asset("assets6/js/matrix.login.js")}}></script> 
+    </body>
+</html>
+
+
+
+

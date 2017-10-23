@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Caracts list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombrecar</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for caract in caracts %}
+            <tr>
+                <td><a href="{{ path('caract_show', { 'id': caract.id }) }}">{{ caract.id }}</a></td>
+                <td>{{ caract.nombrecar }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('caract_show', { 'id': caract.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('caract_edit', { 'id': caract.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('caract_new') }}">Create a new caract</a>
+        </li>
+    </ul>
+{% endblock %}

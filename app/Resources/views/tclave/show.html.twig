@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tclave</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tclave.id }}</td>
+            </tr>
+            <tr>
+                <th>Cleve</th>
+                <td>{{ tclave.cleve }}</td>
+            </tr>
+            <tr>
+                <th>Descriptc</th>
+                <td>{{ tclave.descriptc }}</td>
+            </tr>
+            <tr>
+                <th>Cdebe</th>
+                <td>{{ tclave.cdebe }}</td>
+            </tr>
+            <tr>
+                <th>Chaber</th>
+                <td>{{ tclave.chaber }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('centrocosto_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('centrocosto_edit', { 'id': tclave.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

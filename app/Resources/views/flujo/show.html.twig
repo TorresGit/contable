@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Flujo</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ flujo.id }}</td>
+            </tr>
+            <tr>
+                <th>Cod</th>
+                <td>{{ flujo.cod }}</td>
+            </tr>
+            <tr>
+                <th>Grupo</th>
+                <td>{{ flujo.grupo }}</td>
+            </tr>
+            <tr>
+                <th>Descrip</th>
+                <td>{{ flujo.descrip }}</td>
+            </tr>
+            <tr>
+                <th>Debe</th>
+                <td>{{ flujo.debe }}</td>
+            </tr>
+            <tr>
+                <th>Haber</th>
+                <td>{{ flujo.haber }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('flujoefec_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('flujoefec_edit', { 'id': flujo.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

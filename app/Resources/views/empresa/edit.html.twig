@@ -1,0 +1,208 @@
+{% extends "layout.html.twig" %}
+{% block navegacion %}
+        <ul class="breadcrumb">
+            <li><i class="icon-home"></i><a href=""> Inicio</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li class="active">CONTABLE</li> 
+            <li class="moveDown pull-right">
+                
+                <span class="time"></span>
+                <span class="date"></span>
+            </li>    
+        </ul>
+{% endblock navegacion %}
+
+
+
+{% block contenido %}
+    
+    <div id="content">
+
+<div class="container-fluid"> 
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title"> 
+            <h5>Empresa</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form action="{{ path('empresa_edit',{'id':empresa.id}) }}" method="post" {{ form_enctype(edit_form) }} class="form-horizontal">
+              <div class="control-group"    >
+                <label class="control-label">{{form_label(edit_form.rut)}}</label>
+                <div class="controls">
+                  {{form_widget(edit_form.rut)}} 
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.nombre)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.nombre)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.dedica)}}</label>
+                <div class="controls">
+                  {{form_widget(edit_form.dedica)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.direccion)}}</label>
+                <div class="controls">
+                  {{form_widget(edit_form.direccion)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.email)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.email)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.fono)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.fono)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+               <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.rutre)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.rutre)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.nombrere)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.nombrere)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.direccionre)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.direccionre)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.cellre)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.cellre)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+             
+                
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.correlativo)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.correlativo)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+                            
+
+              <div class="control-group">
+                  
+              <label class="control-label">Parametros del Sistema CONTABLE</label>
+              <div class="controls">
+                <label>
+                  {{form_widget(edit_form.sitadminproye)}}
+                  {{form_label(edit_form.sitadminproye)}}</label>
+                
+              </div>
+            </div>
+
+
+             <div class="control-group">
+                  
+              <label class="control-label">Ok.PIDE</label>
+              <div class="controls">
+                <label>
+                  {{form_widget(edit_form.centro)}}
+                  {{form_label(edit_form.centro)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.flujo)}}
+                  {{form_label(edit_form.flujo)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.item)}}
+                  {{form_label(edit_form.item)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.rutac)}}
+                  {{form_label(edit_form.rutac)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.td1)}}
+                  {{form_label(edit_form.td1)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.doc1)}}
+                  {{form_label(edit_form.doc1)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.td2)}}
+                  {{form_label(edit_form.td2)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.doc2)}}
+                  {{form_label(edit_form.doc2)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.proyec)}}
+                  {{form_label(edit_form.proyec)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.fecven)}}
+                  {{form_label(edit_form.fecven)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.glolin)}}
+                  {{form_label(edit_form.glolin)}}</label>
+                
+              </div>
+            </div>
+
+             <div class="control-group">
+                  
+              <label class="control-label">Ok.Pre-Impre</label>
+              <div class="controls">
+                <label>
+                  {{form_widget(edit_form.vouegre)}}
+                  {{form_label(edit_form.vouegre)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.vouhono)}}
+                  {{form_label(edit_form.vouhono)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.voucomp)}}
+                  {{form_label(edit_form.voucomp)}}</label>
+
+                  <label>
+                  {{form_widget(edit_form.vouven)}}
+                  {{form_label(edit_form.vouven)}}</label>
+
+            </div>
+            </div>      
+            
+              <div class="form-actions">
+                <a  href="{{path('empresa_index') }}"  <button class="btn btn-warning" type="button"> Regresar al Listado</button></a>  
+                <button type="submit" class="btn btn-success">Grabar</button>
+                {{ form_widget(edit_form) }}
+              </div>
+            
+            </form>
+            {{ form_start(delete_form) }}
+                <input type="submit"  class="btn btn-success" value="Eliminar del Listado">
+            {{ form_end(delete_form) }}
+          </div>
+        </div>
+     
+       
+         
+{% endblock contenido %}
+

@@ -1,0 +1,75 @@
+<?php
+
+namespace Amd\PiperBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tiposvoucher
+ *
+ * @ORM\Table(name="tiposvoucher")
+ * @ORM\Entity
+ */
+class Tiposvoucher
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idTiposvoucher", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="text", length=65535, nullable=false)
+     */
+    private $descripcion;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Amd\PiperBundle\Entity\Voucompra", mappedBy="tiposvoucher", cascade={"persist"})
+     */
+    private $voucompra;
+
+
+
+    /**
+     * Get idtiposvoucher
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set descripcion
+     *
+     * @param string $descripcion
+     * @return Tiposvoucher
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    /**
+     * Get descripcion
+     *
+     * @return string 
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+     public function __toString()
+    {   
+        return $this->getDescripcion();
+    }
+}

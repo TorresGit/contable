@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Moneda</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ moneda.id }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ moneda.fecha }}</td>
+            </tr>
+            <tr>
+                <th>Valor</th>
+                <td>{{ moneda.valor }}</td>
+            </tr>
+            <tr>
+                <th>Tipom</th>
+                <td>{{ moneda.tipom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('moneda_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('moneda_edit', { 'id': moneda.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

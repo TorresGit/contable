@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Contabilizar</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contabilizar.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombreconta</th>
+                <td>{{ contabilizar.nombreconta }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contabilizar_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('contabilizar_edit', { 'id': contabilizar.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

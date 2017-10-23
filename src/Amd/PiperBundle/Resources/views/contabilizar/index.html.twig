@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Contabilizars list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombreconta</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contabilizar in contabilizars %}
+            <tr>
+                <td><a href="{{ path('contabilizar_show', { 'id': contabilizar.id }) }}">{{ contabilizar.id }}</a></td>
+                <td>{{ contabilizar.nombreconta }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('contabilizar_show', { 'id': contabilizar.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('contabilizar_edit', { 'id': contabilizar.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contabilizar_new') }}">Create a new contabilizar</a>
+        </li>
+    </ul>
+{% endblock %}

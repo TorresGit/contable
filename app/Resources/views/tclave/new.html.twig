@@ -1,0 +1,64 @@
+{% extends "layout.html.twig" %}
+{% block navegacion %}
+        <ul class="breadcrumb">
+            <li><i class="icon-home"></i><a href=""> Inicio</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li class="active">CONTABLE</li> 
+            <li class="moveDown pull-right">
+                
+                <span class="time"></span>
+                <span class="date"></span>
+            </li>    
+        </ul>
+{% endblock navegacion %}
+
+
+
+{% block contenido %}
+    
+    <div id="content">
+
+<div class="container-fluid"> 
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title"> 
+            <h5>Ingreso Centro de Costo</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form action={{ path("centrocosto_new") }} method="post" class="form-horizontal">
+              
+              
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.descriptc)}}</label>
+                <div class="controls">
+                  {{form_widget(form.descriptc)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.cdebe)}}</label>
+                <div class="controls">
+                  {{form_widget(form.cdebe)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(form.chaber)}}</label>
+                <div class="controls">
+                 {{form_widget(form.chaber)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              
+
+              <div class="form-actions">
+                <a  href="{{path('centrocosto_index') }}"  <button class="btn btn-warning" type="button"> Regresar al Listado</button></a>  
+                <button type="submit" class="btn btn-success">Insertar</button>
+              </div>
+            {{ form_widget(form) }}
+            </form>
+          </div>
+        </div>
+     
+       
+         
+{% endblock contenido %}
+

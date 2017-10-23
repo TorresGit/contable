@@ -1,0 +1,4 @@
+services:
+#    amd_piper.example:
+#        class: Amd\PiperBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

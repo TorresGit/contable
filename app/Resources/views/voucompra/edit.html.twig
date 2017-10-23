@@ -1,0 +1,199 @@
+{% block pagecontent %}
+
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <!-- START DATATABLE EXPORT -->
+            <div class="panel panel-default">
+
+                <form class="form-horizontal" role="form" action="{{ path('voucompra_edit', { 'id': voucompra.id }) }}"
+                      method="post" {{ form_enctype(form) }}>
+
+                    {{ form_errors(form) }}
+                    <div class="row">
+                        {#<div class="form-group">#}
+                        {#<label class="col-md-3 control-label">Tipos de Voucher:</label>#}
+                        {#<div class="col-md-6">#}
+                        {#{{ form_widget(form.Tiposvoucher) }}#}
+                        {#</div>#}
+                        {#</div>#}
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Fecha:</label>
+                                <div class="col-md-6">
+                                    {{ form_widget(form.fecha) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Detalle:</label>
+                                <div class="col-md-6">
+                                    {{ form_widget(form.detalle) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6"></div>
+
+                    </div>
+                    <br>
+
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Ingrerut:</label>
+                                <div class="col-md-6">
+                                    {{ form_widget(form.Ingrerut) }}
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Plan:</label>
+                                <div class="col-md-6">
+                                    {{ form_widget(form.Plan) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="form-group">
+                                <label class="col-md-6 control-label">Tipovou:</label>
+                                <div class="col-md-6">
+                                    {{ form_widget(form.Tipovou) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6"></div>
+                    </div>
+                    <br>
+
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-6 control-label">Fecha de Venta:</label>
+                                <div class="col-md-6">
+                                    {{ form_widget(form.fechaven) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-6 control-label">Fecha de Recepción:</label>
+                                <div class="col-md-6">
+                                    {{ form_widget(form.fecharecep) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6"></div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">NUM_Documento:</label>
+                                <div class="col-md-6">
+                                    {{ form_widget(form.numdocu) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">NUM_Reden:</label>
+                                <div class="col-md-6">
+                                    {{ form_widget(form.numoreden) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6"></div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-3">
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Debe:</label>
+                                <div class="col-md-6">
+                                    {{ form_widget(form.debe) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Haber:</label>
+                                <div class="col-md-6">
+                                    {{ form_widget(form.haber) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Saldo:</label>
+                                <div class="col-md-6">
+                                    {{ form_widget(form.saldo) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                    <br>
+                    <br>
+
+                    {{ form_rest(form) }}
+
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-refresh"></i>Actualizar
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+            <!-- END DATATABLE EXPORT -->
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block pageplugins %}
+    <script type='text/javascript' src='{{ asset('template/js/plugins/icheck/icheck.min.js') }}'></script>
+    <script type="text/javascript"
+            src="{{ asset('template/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('template/js/plugins/bootstrap/bootstrap-datepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template/js/plugins/bootstrap/bootstrap-file-input.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template/js/plugins/bootstrap/bootstrap-select.js') }}"></script>
+
+    <script type='text/javascript'
+            src='{{ asset('template/js/plugins/validationengine/languages/jquery.validationEngine-es.js') }}'></script>
+    <script type='text/javascript'
+            src='{{ asset('template/js/plugins/validationengine/jquery.validationEngine.js') }}'></script>
+
+    <script type='text/javascript'
+            src='{{ asset('template/js/plugins/jquery-validation/jquery.validate.js') }}'></script>
+
+    <script type='text/javascript'
+            src='{{ asset('template/js/plugins/maskedinput/jquery.maskedinput.min.js') }}'></script>
+
+    <script type="text/javascript" src="{{ asset('template/js/plugins/tagsinput/jquery.tagsinput.min.js') }}"></script>
+{% endblock %}

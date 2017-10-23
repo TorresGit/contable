@@ -1,0 +1,167 @@
+{% extends "layout.html.twig" %}
+{% block navegacion %}
+        <ul class="breadcrumb">
+            <li><i class="icon-home"></i><a href=""> Inicio</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                <li class="active">CONTABLE</li> 
+            <li class="moveDown pull-right">
+                
+                <span class="time"></span>
+                <span class="date"></span>
+            </li>    
+        </ul>
+{% endblock navegacion %}
+
+
+
+{% block contenido %}
+    
+    <div id="content">
+
+<div class="container-fluid"> 
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title"> 
+            <h5>Modificar Ingreso de Rut</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form action="{{ path('ingresorut_edit',{'id':ingrerut.id}) }}" method="post" {{ form_enctype(edit_form) }} class="form-horizontal">
+              <div class="control-group"    >
+                <label class="control-label">{{form_label(edit_form.rut)}}</label>
+                <div class="controls">
+                  {{form_widget(edit_form.rut)}} 
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.nombre)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.nombre)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.direccion)}}</label>
+                <div class="controls">
+                  {{form_widget(edit_form.direccion)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.comuna)}}</label>
+                <div class="controls">
+                  {{form_widget(edit_form.comuna)}}
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.ciudad)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.ciudad)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.encargado)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.encargado)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.giro)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.giro)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.fono)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.fono)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.celular)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.celular)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+               
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.email)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.email)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+                
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.codpostal)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.codpostal)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label">{{form_label(edit_form.formapago)}}</label>
+                <div class="controls">
+                 {{form_widget(edit_form.formapago)}}
+                  <span class="help-block">Description field</span> </div>
+              </div>
+
+              
+
+              <div class="control-group">
+                  
+              <label class="control-label">Caracteristicas</label>
+              <div class="controls">
+                <label>
+                  {{form_widget(edit_form.empleado)}}
+                  {{form_label(edit_form.empleado)}}</label>
+                
+                <label>
+                  {{form_widget(edit_form.cliente)}} 
+                  {{form_label(edit_form.cliente)}}</label>
+
+                <label>
+                  {{form_widget(edit_form.proveedor)}}
+                   {{form_label(edit_form.proveedor)}}</label>
+                   
+                    <label>
+                  {{form_widget(edit_form.honorarios)}}
+                   {{form_label(edit_form.honorarios)}}</label>
+              </div>
+            </div>
+            <div class="control-group">
+                  
+              <label class="control-label">Para Contabilizar</label>
+              <div class="controls">
+                <label>
+                  {{form_widget(edit_form.ctare)}}
+                  {{form_label(edit_form.ctare)}}</label>
+                
+                <label>
+                  {{form_widget(edit_form.flujo)}} 
+                  {{form_label(edit_form.flujo)}}</label>
+
+                <label>
+                  {{form_widget(edit_form.item)}}
+                   {{form_label(edit_form.item)}}</label>
+                   
+                    
+              </div>
+            </div>
+
+              <div class="form-actions">
+                <a  href="{{path('ingresorut_index') }}"  <button class="btn btn-warning" type="button"> Regresar al Listado</button></a>  
+                <button type="submit" class="btn btn-success">Grabar</button>
+                {{ form_widget(edit_form) }}
+              </div>
+            
+            </form>
+            {{ form_start(delete_form) }}
+                <input type="submit"  class="btn btn-success" value="Eliminar del Listado">
+            {{ form_end(delete_form) }}
+          </div>
+        </div>
+     
+       
+         
+{% endblock contenido %}
